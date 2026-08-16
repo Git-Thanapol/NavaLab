@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import logoMark from '../../assets/brand/mark.png';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lang: Lang;
+  site: CollectionEntry<'site'>;
+}
+
+const { lang, site } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="border-b border-line bg-mist">
+  <div class="container-page grid gap-12 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-32">
+    <div class="animate-fade-up">
+      <Image src={logoMark} alt="" class="mb-8 h-10 w-10" />
+      <p class="eyebrow mb-6">{t('hero.eyebrow')}</p>
+      <h1 class="max-w-xl text-4xl font-bold leading-tight text-navy-900 sm:text-5xl">
+        {site.data.heroHeading[lang]}
+      </h1>
+      <p class="mt-6 max-w-lg text-base leading-relaxed text-navy-500">
+        {site.data.heroSub[lang]}
+      </p>
+      <a
+        href={localizePath('/#team', lang)}
+        class="mt-10 inline-block border border-navy-900 px-7 py-3 text-sm font-medium text-navy-900 transition-colors hover:bg-navy-900 hover:text-paper"
+      >
+        {t('hero.cta')}
+      </a>
+    </div>
+
+    <div class="relative hidden md:block">
+      <div class="absolute -right-6 top-4 h-64 w-64 -rotate-6 bg-accent/90"></div>
+      <div class="relative ml-auto h-80 w-64 border border-line bg-paper p-8">
+        <p class="font-display text-lg italic leading-relaxed text-navy-700">
+          &ldquo;{site.data.visionStatement[lang]}&rdquo;
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

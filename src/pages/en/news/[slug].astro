@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import NewsDetailView from '../../../views/NewsDetailView.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('news');
+  return items.map((item) => ({
+    params: { slug: item.id },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+---
+
+<NewsDetailView lang="en" item={item} />

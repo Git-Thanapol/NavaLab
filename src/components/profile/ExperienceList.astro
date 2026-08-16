@@ -1,0 +1,34 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const experience = member.data.experience;
+
+if (experience.length === 0) return null;
+---
+
+<section class="border-b border-line py-16">
+  <div class="container-page max-w-2xl">
+    <p class="eyebrow mb-8">{t('profile.experience')}</p>
+    <ul class="space-y-6">
+      {
+        experience.map((job) => (
+          <li class="flex items-baseline justify-between gap-6 border-t border-line pt-4">
+            <div>
+              <p class="font-display text-base font-bold text-navy-900">{job.role[lang]}</p>
+              <p class="mt-1 text-sm text-navy-500">{job.organization}</p>
+            </div>
+            <span class="shrink-0 text-sm text-navy-300">{job.period}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

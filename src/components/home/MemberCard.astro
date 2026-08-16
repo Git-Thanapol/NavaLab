@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const href = localizePath(`/team/${member.id}`, lang);
+---
+
+<a
+  href={href}
+  class="group block animate-fade-up text-center"
+>
+  <div class="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-full ring-1 ring-line transition-shadow group-hover:ring-accent">
+    <Image
+      src={member.data.photo}
+      alt={member.data.name[lang]}
+      width={320}
+      height={320}
+      class="h-full w-full object-cover"
+    />
+  </div>
+  <p class="text-xs font-medium uppercase tracking-wide text-navy-300">
+    {member.data.role[lang]}
+  </p>
+  <h3 class="mt-1 font-display text-lg font-bold text-navy-900">
+    {member.data.name[lang]}
+  </h3>
+  <p class="mx-auto mt-2 max-w-[22ch] text-sm text-navy-500">
+    {member.data.bioShort[lang]}
+  </p>
+  <span class="mt-3 inline-block text-xs font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
+    {t('team.viewProfile')} &rarr;
+  </span>
+</a>

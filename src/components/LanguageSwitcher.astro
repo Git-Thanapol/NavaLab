@@ -1,0 +1,32 @@
+---
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  /** current path with the /en prefix already stripped, e.g. "/team/jane-doe" */
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const clean = path === '' ? '/' : path;
+const thHref = clean;
+const enHref = clean === '/' ? '/en' : `/en${clean}`;
+---
+
+<div class="flex items-center gap-1 text-sm font-medium">
+  <a
+    href={thHref}
+    aria-current={lang === 'th' ? 'page' : undefined}
+    class={`px-2 py-1 ${lang === 'th' ? 'text-navy-900' : 'text-navy-300 hover:text-navy-700'}`}
+  >
+    TH
+  </a>
+  <span class="text-line" aria-hidden="true">/</span>
+  <a
+    href={enHref}
+    aria-current={lang === 'en' ? 'page' : undefined}
+    class={`px-2 py-1 ${lang === 'en' ? 'text-navy-900' : 'text-navy-300 hover:text-navy-700'}`}
+  >
+    EN
+  </a>
+</div>

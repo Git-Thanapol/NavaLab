@@ -1,0 +1,44 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const publications = member.data.publications;
+
+if (publications.length === 0) return null;
+---
+
+<section class="border-b border-line py-16">
+  <div class="container-page">
+    <p class="eyebrow mb-8">{t('profile.publications')}</p>
+    <ul class="divide-y divide-line border-t border-line">
+      {
+        publications.map((pub) => {
+          const link = pub.url ?? (pub.doi ? `https://doi.org/${pub.doi}` : undefined);
+          const Wrapper = link ? 'a' : 'div';
+          return (
+            <li>
+              <Wrapper
+                href={link}
+                class:list={['block py-5', link && 'hover:text-accent']}
+                target={link ? '_blank' : undefined}
+                rel={link ? 'noopener noreferrer' : undefined}
+              >
+                <p class="font-display text-base font-bold text-navy-900">{pub.title}</p>
+                <p class="mt-1 text-sm text-navy-500">
+                  {pub.authors} &middot; {pub.venue} &middot; {pub.year}
+                </p>
+              </Wrapper>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

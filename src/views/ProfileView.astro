@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProfileHero from '../components/profile/ProfileHero.astro';
+import ExpertiseTags from '../components/profile/ExpertiseTags.astro';
+import ExperienceList from '../components/profile/ExperienceList.astro';
+import ResearchSection from '../components/profile/ResearchSection.astro';
+import PublicationList from '../components/profile/PublicationList.astro';
+import RelatedProjects from '../components/profile/RelatedProjects.astro';
+import EducationList from '../components/profile/EducationList.astro';
+import ContactSocials from '../components/profile/ContactSocials.astro';
+import ProfilePagination from '../components/profile/ProfilePagination.astro';
+import { getImage } from 'astro:assets';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  member: CollectionEntry<'members'>;
+}
+
+const { lang, member } = Astro.props;
+
+const members = (await getCollection('members')).sort((a, b) => a.data.order - b.data.order);
+const index = members.findIndex((m) => m.id === member.id);
+const prev = index > 0 ? members[index - 1] : undefined;
+const next = index < members.length - 1 ? members[index + 1] : undefined;
+
+const ogImage = await getImage({ src: member.data.photo, width: 1200, height: 630 });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: member.data.name[lang],
+  jobTitle: member.data.role[lang],
+  description: member.data.bio[lang],
+  email: member.data.links.email,
+  sameAs: [member.data.links.linkedin, member.data.links.scholar, member.data.links.orcid, member.data.links.researchgate].filter(Boolean),
+  affiliation: { '@type': 'Organization', name: 'NavaLab' },
+};
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath={`/team/${member.id}`}
+  title={member.data.name[lang]}
+  description={member.data.bioShort[lang]}
+  image={ogImage.src}
+  jsonLd={jsonLd}
+>
+  <ProfileHero member={member} lang={lang} />
+  <ExpertiseTags member={member} lang={lang} />
+  <ExperienceList member={member} lang={lang} />
+  <ResearchSection member={member} lang={lang} />
+  <PublicationList member={member} lang={lang} />
+  <RelatedProjects member={member} lang={lang} />
+  <EducationList member={member} lang={lang} />
+  <ContactSocials member={member} lang={lang} />
+  <ProfilePagination lang={lang} prev={prev} next={next} />
+</BaseLayout>

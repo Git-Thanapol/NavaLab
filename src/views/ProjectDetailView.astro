@@ -1,0 +1,60 @@
+---
+import { getEntries } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, localizePath, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  project: CollectionEntry<'projects'>;
+}
+
+const { lang, project } = Astro.props;
+const t = useTranslations(lang);
+const { data } = project;
+const members = data.members.length ? await getEntries(data.members) : [];
+const ogImage = await getImage({ src: data.cover, width: 1200, height: 630 });
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath={`/projects/${project.id}`}
+  title={data.title[lang]}
+  description={data.summary[lang]}
+  image={ogImage.src}
+>
+  <article>
+    <div class="aspect-[21/9] w-full overflow-hidden bg-navy-700">
+      <Image src={data.cover} alt={data.title[lang]} width={1600} height={686} class="h-full w-full object-cover" />
+    </div>
+
+    <div class="container-page max-w-3xl py-16">
+      <p class="eyebrow mb-4">
+        {t(data.status === 'ongoing' ? 'projects.status.ongoing' : 'projects.status.completed')} &middot; {data.year}
+      </p>
+      <h1 class="text-3xl font-bold text-navy-900 sm:text-4xl">{data.title[lang]}</h1>
+      <p class="mt-6 text-lg leading-relaxed text-navy-500">{data.summary[lang]}</p>
+
+      {
+        members.length > 0 && (
+          <div class="mt-12 border-t border-line pt-8">
+            <p class="eyebrow mb-6">{t('projects.members')}</p>
+            <ul class="flex flex-wrap gap-x-8 gap-y-3">
+              {members.map((member) => (
+                <li>
+                  <a
+                    href={localizePath(`/team/${member.id}`, lang)}
+                    class="text-sm font-medium text-navy-700 hover:text-accent"
+                  >
+                    {member.data.name[lang]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  </article>
+</BaseLayout>

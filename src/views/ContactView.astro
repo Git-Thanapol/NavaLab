@@ -1,0 +1,45 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const site = await getEntry('site', 'home');
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath="/contact"
+  title={t('contact.heading')}
+  description={t('contact.body')}
+>
+  <section class="py-24">
+    <div class="container-page max-w-xl text-center">
+      <p class="eyebrow mx-auto justify-center">{t('contact.eyebrow')}</p>
+      <h1 class="mt-4 text-4xl font-bold text-navy-900">{t('contact.heading')}</h1>
+      <p class="mt-4 text-navy-500">{t('contact.body')}</p>
+
+      <a
+        href={`mailto:${site.data.contactEmail}`}
+        class="mt-10 inline-block border border-navy-900 px-7 py-3 text-sm font-medium text-navy-900 transition-colors hover:bg-navy-900 hover:text-paper"
+      >
+        {site.data.contactEmail}
+      </a>
+
+      {
+        site.data.socials.linkedin && (
+          <p class="mt-6 text-sm">
+            <a href={site.data.socials.linkedin} class="text-navy-500 hover:text-accent">
+              LinkedIn
+            </a>
+          </p>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

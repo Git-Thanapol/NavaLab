@@ -1,0 +1,28 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const tags = member.data.expertise[lang];
+
+if (tags.length === 0) return null;
+---
+
+<section class="border-b border-line py-16">
+  <div class="container-page">
+    <p class="eyebrow mb-6">{t('profile.expertise')}</p>
+    <ul class="flex flex-wrap gap-3">
+      {
+        tags.map((tag) => (
+          <li class="border border-line px-4 py-2 text-sm text-navy-700">{tag}</li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

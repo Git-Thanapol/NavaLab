@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 3);
+---
+
+<section class="border-b border-line bg-mist py-24">
+  <div class="container-page">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow mb-4">{t('research.eyebrow')}</p>
+        <h2 class="max-w-xl text-3xl font-bold text-navy-900">{t('research.heading')}</h2>
+      </div>
+      <a href={localizePath('/projects', lang)} class="text-sm font-medium text-accent hover:underline">
+        {t('research.viewAll')} &rarr;
+      </a>
+    </div>
+
+    <div class="mt-14 grid gap-8 md:grid-cols-3">
+      {
+        projects.map((project) => (
+          <a href={localizePath(`/projects/${project.id}`, lang)} class="group block">
+            <div class="aspect-[3/2] overflow-hidden bg-navy-700">
+              <Image
+                src={project.data.cover}
+                alt={project.data.title[lang]}
+                width={480}
+                height={320}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <p class="mt-4 text-xs font-medium uppercase tracking-wide text-navy-300">
+              {t(project.data.status === 'ongoing' ? 'projects.status.ongoing' : 'projects.status.completed')}
+              {' · '}
+              {project.data.year}
+            </p>
+            <h3 class="mt-1 font-display text-lg font-bold text-navy-900 group-hover:text-accent">
+              {project.data.title[lang]}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-navy-500">{project.data.summary[lang]}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

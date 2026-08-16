@@ -1,0 +1,82 @@
+{
+  "home": {
+    "heroHeading": {
+      "th": "เข้าใจทะเล ด้วยเทคโนโลยีและงานวิจัย",
+      "en": "Understanding the Sea Through Technology and Research"
+    },
+    "heroSub": {
+      "th": "NavaLab คือชุมชนนักวิจัยเทคโนโลยีทางทะเลที่รวมผู้เชี่ยวชาญหลากสาขาไว้ด้วยกัน ตั้งแต่พลศาสตร์ของไหล หุ่นยนต์ใต้น้ำ ไปจนถึงนโยบายชายฝั่ง",
+      "en": "NavaLab is a community of maritime technology researchers spanning hydrodynamics, underwater robotics, and coastal policy."
+    },
+    "visionStatement": {
+      "th": "เรามุ่งพัฒนาความรู้และเทคโนโลยีทางทะเลของไทยให้แข่งขันได้ในระดับสากล พร้อมส่งต่อองค์ความรู้กลับสู่ชุมชนชายฝั่ง",
+      "en": "We work to advance Thai maritime technology to a globally competitive standard, while channeling that knowledge back to coastal communities."
+    },
+    "expertiseAreas": [
+      {
+        "title": {
+          "th": "พลศาสตร์ของไหล",
+          "en": "Hydrodynamics"
+        },
+        "description": {
+          "th": "การออกแบบตัวเรือและจำลองการไหลด้วยคอมพิวเตอร์",
+          "en": "Hull design and computational flow simulation."
+        }
+      },
+      {
+        "title": {
+          "th": "หุ่นยนต์ทางทะเล",
+          "en": "Marine Robotics"
+        },
+        "description": {
+          "th": "ยานใต้น้ำอัตโนมัติและระบบสำรวจ",
+          "en": "Autonomous underwater vehicles and survey systems."
+        }
+      },
+      {
+        "title": {
+          "th": "วิศวกรรมชายฝั่ง",
+          "en": "Coastal Engineering"
+        },
+        "description": {
+          "th": "การป้องกันการกัดเซาะและแนวทางเชิงธรรมชาติ",
+          "en": "Erosion control and nature-based approaches."
+        }
+      },
+      {
+        "title": {
+          "th": "วัสดุทางทะเล",
+          "en": "Marine Materials"
+        },
+        "description": {
+          "th": "การกัดกร่อนและสารเคลือบป้องกัน",
+          "en": "Corrosion behavior and protective coatings."
+        }
+      },
+      {
+        "title": {
+          "th": "คลื่นเสียงใต้น้ำ",
+          "en": "Underwater Acoustics"
+        },
+        "description": {
+          "th": "ระบบโซนาร์และการประเมินปริมาณสัตว์น้ำ",
+          "en": "Sonar systems and stock assessment."
+        }
+      },
+      {
+        "title": {
+          "th": "นโยบายทางทะเล",
+          "en": "Marine Policy"
+        },
+        "description": {
+          "th": "เชื่อมงานวิจัยสู่นโยบายและความยั่งยืน",
+          "en": "Connecting research to policy and sustainability."
+        }
+      }
+    ],
+    "contactEmail": "contact@navalab.org",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/company/navalab-th"
+    }
+  }
+}

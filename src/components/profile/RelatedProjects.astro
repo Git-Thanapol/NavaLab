@@ -1,0 +1,37 @@
+---
+import { getEntries } from 'astro:content';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const projects = member.data.projects.length ? await getEntries(member.data.projects) : [];
+
+if (projects.length === 0) return null;
+---
+
+<section class="border-b border-line py-16">
+  <div class="container-page">
+    <p class="eyebrow mb-8">{t('profile.projects')}</p>
+    <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((project) => (
+          <li>
+            <a
+              href={localizePath(`/projects/${project.id}`, lang)}
+              class="block border border-line p-5 transition-colors hover:border-navy-900"
+            >
+              <p class="font-display text-base font-bold text-navy-900">{project.data.title[lang]}</p>
+              <p class="mt-2 text-sm text-navy-500">{project.data.summary[lang]}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

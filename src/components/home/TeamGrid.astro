@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import MemberCard from './MemberCard.astro';
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const members = (await getCollection('members')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="team" class="scroll-mt-20 border-b border-line py-24">
+  <div class="container-page">
+    <div class="mx-auto max-w-xl text-center">
+      <p class="eyebrow mx-auto justify-center">{t('team.eyebrow')}</p>
+      <h2 class="mt-4 text-3xl font-bold text-navy-900">{t('team.heading')}</h2>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+      {members.map((member) => <MemberCard member={member} lang={lang} />)}
+    </div>
+  </div>
+</section>

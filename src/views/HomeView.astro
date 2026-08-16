@@ -1,0 +1,42 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ExpertiseGrid from '../components/home/ExpertiseGrid.astro';
+import FeaturedResearch from '../components/home/FeaturedResearch.astro';
+import TeamGrid from '../components/home/TeamGrid.astro';
+import NewsList from '../components/home/NewsList.astro';
+import ContactCTA from '../components/home/ContactCTA.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const site = await getEntry('site', 'home');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'NavaLab',
+  description: site.data.heroSub[lang],
+  url: Astro.site?.toString(),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath="/"
+  title={site.data.heroHeading[lang]}
+  description={site.data.heroSub[lang]}
+  jsonLd={jsonLd}
+>
+  <Hero lang={lang} site={site} />
+  <ExpertiseGrid lang={lang} site={site} />
+  <FeaturedResearch lang={lang} />
+  <TeamGrid lang={lang} />
+  <NewsList lang={lang} />
+  <ContactCTA lang={lang} site={site} />
+</BaseLayout>

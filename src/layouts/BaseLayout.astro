@@ -1,0 +1,72 @@
+---
+import { getEntry } from 'astro:content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  /** pathname with the /en prefix stripped, e.g. "/" or "/team/jane-doe" */
+  cleanPath: string;
+  title: string;
+  description: string;
+  image?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { lang, cleanPath, title, description, image, jsonLd } = Astro.props;
+const t = useTranslations(lang);
+
+const site = await getEntry('site', 'home');
+const canonicalPath = lang === 'th' ? cleanPath : `/en${cleanPath === '/' ? '' : cleanPath}`;
+const canonicalURL = new URL(canonicalPath, Astro.site);
+const thURL = new URL(cleanPath, Astro.site);
+const enURL = new URL(`/en${cleanPath === '/' ? '' : cleanPath}`, Astro.site);
+const ogImage = image ? new URL(image, Astro.site) : new URL('/og-default.jpg', Astro.site);
+
+const jsonLdEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title} — NavaLab</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="th" href={thURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="x-default" href={thURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NavaLab" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    {
+      jsonLdEntries.map((entry) => (
+        <script type="application/ld+json" set:html={JSON.stringify(entry)} />
+      ))
+    }
+  </head>
+  <body>
+    <a href="#main" class="skip-link">{lang === 'th' ? 'ข้ามไปยังเนื้อหาหลัก' : 'Skip to content'}</a>
+
+    <Header lang={lang} cleanPath={cleanPath} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <Footer lang={lang} contactEmail={site.data.contactEmail} socials={site.data.socials} />
+  </body>
+</html>

@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, localizePath, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const dateFormatter = new Intl.DateTimeFormat(lang === 'th' ? 'th-TH' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath="/news"
+  title={t('news.heading.page')}
+  description={t('news.heading.page')}
+>
+  <section class="py-20">
+    <div class="container-page max-w-3xl">
+      <p class="eyebrow mb-4">{t('news.eyebrow')}</p>
+      <h1 class="text-4xl font-bold text-navy-900">{t('news.heading.page')}</h1>
+
+      <ul class="mt-16 divide-y divide-line border-t border-line">
+        {
+          items.map((item) => (
+            <li>
+              <a
+                href={localizePath(`/news/${item.id}`, lang)}
+                class="group block py-8"
+              >
+                <span class="text-sm text-navy-300">{dateFormatter.format(item.data.date)}</span>
+                <h2 class="mt-2 font-display text-xl font-bold text-navy-900 group-hover:text-accent">{item.data.title[lang]}</h2>
+                <p class="mt-2 text-sm leading-relaxed text-navy-500">{item.data.excerpt[lang]}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

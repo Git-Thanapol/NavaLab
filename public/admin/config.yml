@@ -1,0 +1,287 @@
+backend:
+  name: github
+  repo: navalab/navalab-site # TODO: แก้เป็น owner/repo จริงก่อน deploy
+  branch: main
+  base_url: https://navalab.example.org/oauth # TODO: แก้เป็นโดเมนจริง — ต้องตรงกับ SITE_DOMAIN ใน .env และ OAuth App callback URL
+
+local_backend: true
+
+media_folder: "src/assets/uploads"
+public_folder: "/src/assets/uploads"
+
+collections:
+  - name: members
+    label: "สมาชิก / Members"
+    label_singular: "สมาชิก"
+    folder: "src/content/members"
+    create: true
+    delete: true
+    slug: "{{fields.name.en}}"
+    identifier_field: name
+    sortable_fields: [order, "name.en"]
+    fields:
+      - { label: "ลำดับการแสดงผล / Order", name: order, widget: number, value_type: int, default: 1 }
+      - label: "ชื่อ / Name"
+        name: name
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: string }
+          - { label: "English", name: en, widget: string }
+      - label: "ตำแหน่ง / Role"
+        name: role
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: string }
+          - { label: "English", name: en, widget: string }
+      - { label: "รูปโปรไฟล์ / Photo", name: photo, widget: image }
+      - label: "แนะนำตัวสั้น (ใช้ในการ์ดหน้าแรก) / Short bio"
+        name: bioShort
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: text }
+          - { label: "English", name: en, widget: text }
+      - label: "ประวัติเต็ม (ใช้ในหน้าโปรไฟล์) / Full bio"
+        name: bio
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: text }
+          - { label: "English", name: en, widget: text }
+      - label: "ความเชี่ยวชาญ / Expertise"
+        name: expertise
+        widget: object
+        fields:
+          - { label: "ไทย (รายการ)", name: th, widget: list }
+          - { label: "English (list)", name: en, widget: list }
+      - label: "ประวัติการศึกษา / Education"
+        name: education
+        widget: list
+        default: []
+        fields:
+          - label: "วุฒิการศึกษา / Degree"
+            name: degree
+            widget: object
+            fields:
+              - { label: "ไทย", name: th, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "สาขา / Field"
+            name: field
+            widget: object
+            fields:
+              - { label: "ไทย", name: th, widget: string }
+              - { label: "English", name: en, widget: string }
+          - label: "สถาบัน / Institution"
+            name: institution
+            widget: object
+            fields:
+              - { label: "ไทย", name: th, widget: string }
+              - { label: "English", name: en, widget: string }
+          - { label: "ปีที่จบ (เว้นว่างได้ถ้ายังเรียนอยู่) / Year", name: year, widget: number, value_type: int, required: false }
+      - label: "ประสบการณ์ทำงาน / Experience"
+        name: experience
+        widget: list
+        default: []
+        fields:
+          - label: "ตำแหน่ง / Role"
+            name: role
+            widget: object
+            fields:
+              - { label: "ไทย", name: th, widget: string }
+              - { label: "English", name: en, widget: string }
+          - { label: "องค์กร / Organization", name: organization, widget: string }
+          - { label: "ช่วงเวลา (เช่น Oct 2021 - Sep 2025) / Period", name: period, widget: string }
+      - label: "งานวิจัย / Research"
+        name: research
+        widget: object
+        fields:
+          - label: "กำลังทำอยู่ / Current"
+            name: current
+            widget: list
+            default: []
+            fields:
+              - label: "หัวข้อ / Title"
+                name: title
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: string }
+                  - { label: "English", name: en, widget: string }
+              - label: "รายละเอียดย่อ / Summary"
+                name: summary
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: text }
+                  - { label: "English", name: en, widget: text }
+          - label: "ทำสำเร็จแล้ว / Completed"
+            name: completed
+            widget: list
+            default: []
+            fields:
+              - label: "หัวข้อ / Title"
+                name: title
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: string }
+                  - { label: "English", name: en, widget: string }
+              - label: "รายละเอียดย่อ / Summary"
+                name: summary
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: text }
+                  - { label: "English", name: en, widget: text }
+              - { label: "ปี / Year", name: year, widget: number, value_type: int }
+      - label: "ผลงานตีพิมพ์ / Publications"
+        name: publications
+        widget: list
+        default: []
+        fields:
+          - { label: "ชื่อผลงาน / Title", name: title, widget: string }
+          - { label: "ผู้แต่ง / Authors", name: authors, widget: string }
+          - { label: "แหล่งตีพิมพ์ / Venue", name: venue, widget: string }
+          - { label: "ปี / Year", name: year, widget: number, value_type: int }
+          - { label: "DOI", name: doi, widget: string, required: false }
+          - { label: "ลิงก์ / URL", name: url, widget: string, required: false }
+      - label: "โปรเจกต์ที่เกี่ยวข้อง / Related projects"
+        name: projects
+        widget: relation
+        collection: projects
+        multiple: true
+        required: false
+        search_fields: ["title.en"]
+        display_fields: ["title.en"]
+        value_field: "{{slug}}"
+      - label: "ติดต่อ / Contact links"
+        name: links
+        widget: object
+        fields:
+          - { label: "อีเมล / Email", name: email, widget: string, required: false }
+          - { label: LinkedIn, name: linkedin, widget: string, required: false }
+          - { label: "Google Scholar", name: scholar, widget: string, required: false }
+          - { label: ORCID, name: orcid, widget: string, required: false }
+          - { label: ResearchGate, name: researchgate, widget: string, required: false }
+          - { label: "เว็บไซต์ส่วนตัว / Website", name: website, widget: string, required: false }
+      - { label: "ไฟล์ CV (PDF)", name: cv, widget: file, required: false }
+      - { label: "แสดงเป็นสมาชิกเด่น / Featured", name: featured, widget: boolean, default: false }
+
+  - name: projects
+    label: "โปรเจกต์ / Projects"
+    label_singular: "โปรเจกต์"
+    folder: "src/content/projects"
+    create: true
+    delete: true
+    slug: "{{fields.title.en}}"
+    identifier_field: title
+    fields:
+      - label: "ชื่อโปรเจกต์ / Title"
+        name: title
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: string }
+          - { label: "English", name: en, widget: string }
+      - label: "สรุปย่อ / Summary"
+        name: summary
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: text }
+          - { label: "English", name: en, widget: text }
+      - { label: "ภาพปก / Cover image", name: cover, widget: image }
+      - label: "สถานะ / Status"
+        name: status
+        widget: select
+        options:
+          - { label: "กำลังดำเนินการ / Ongoing", value: ongoing }
+          - { label: "สำเร็จแล้ว / Completed", value: completed }
+      - { label: "ปี / Year", name: year, widget: number, value_type: int }
+      - label: "ผู้ร่วมวิจัย / Members"
+        name: members
+        widget: relation
+        collection: members
+        multiple: true
+        required: false
+        search_fields: ["name.en"]
+        display_fields: ["name.en"]
+        value_field: "{{slug}}"
+      - { label: "แสดงในหน้าแรก / Featured", name: featured, widget: boolean, default: false }
+
+  - name: news
+    label: "ข่าวและกิจกรรม / News"
+    label_singular: "ข่าว"
+    folder: "src/content/news"
+    create: true
+    delete: true
+    slug: "{{fields.title.en}}"
+    identifier_field: title
+    fields:
+      - label: "หัวข้อข่าว / Title"
+        name: title
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: string }
+          - { label: "English", name: en, widget: string }
+      - { label: "วันที่ / Date", name: date, widget: datetime }
+      - { label: "ภาพปก / Cover image", name: cover, widget: image, required: false }
+      - label: "สรุปย่อ (แสดงในรายการ) / Excerpt"
+        name: excerpt
+        widget: object
+        fields:
+          - { label: "ไทย", name: th, widget: text }
+          - { label: "English", name: en, widget: text }
+      - label: "เนื้อหาเต็ม / Body"
+        name: body
+        widget: object
+        fields:
+          - { label: "ไทย (เว้นบรรทัดว่างเพื่อขึ้นย่อหน้าใหม่)", name: th, widget: text }
+          - { label: "English (blank line = new paragraph)", name: en, widget: text }
+
+  - name: site
+    label: "ตั้งค่าเว็บไซต์ / Site Settings"
+    files:
+      - name: home
+        label: "หน้าแรก / Home page"
+        file: "src/content/site/home.json"
+        fields:
+          - name: home
+            label: "หน้าแรก"
+            widget: object
+            collapsed: false
+            fields:
+              - label: "หัวข้อหลัก / Hero heading"
+                name: heroHeading
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: string }
+                  - { label: "English", name: en, widget: string }
+              - label: "หัวข้อรอง / Hero subheading"
+                name: heroSub
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: text }
+                  - { label: "English", name: en, widget: text }
+              - label: "วิสัยทัศน์ / Vision statement"
+                name: visionStatement
+                widget: object
+                fields:
+                  - { label: "ไทย", name: th, widget: text }
+                  - { label: "English", name: en, widget: text }
+              - label: "ความเชี่ยวชาญของกลุ่ม / Expertise areas"
+                name: expertiseAreas
+                widget: list
+                fields:
+                  - label: "หัวข้อ / Title"
+                    name: title
+                    widget: object
+                    fields:
+                      - { label: "ไทย", name: th, widget: string }
+                      - { label: "English", name: en, widget: string }
+                  - label: "คำอธิบาย / Description"
+                    name: description
+                    widget: object
+                    fields:
+                      - { label: "ไทย", name: th, widget: text }
+                      - { label: "English", name: en, widget: text }
+              - { label: "อีเมลติดต่อ / Contact email", name: contactEmail, widget: string }
+              - label: "โซเชียล / Socials"
+                name: socials
+                widget: object
+                fields:
+                  - { label: LinkedIn, name: linkedin, widget: string, required: false }
+                  - { label: Facebook, name: facebook, widget: string, required: false }
+                  - { label: "X / Twitter", name: twitter, widget: string, required: false }

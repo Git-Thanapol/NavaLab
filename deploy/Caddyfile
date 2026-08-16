@@ -1,0 +1,17 @@
+{$SITE_DOMAIN} {
+	# GitHub webhook -> triggers a rebuild
+	handle /hooks/deploy* {
+		reverse_proxy webhook:9000
+	}
+
+	# CMS GitHub OAuth login (see public/admin/config.yml backend.base_url)
+	handle /oauth/* {
+		uri strip_prefix /oauth
+		reverse_proxy oauth:8083
+	}
+
+	# Everything else: the built static site
+	handle {
+		reverse_proxy web:80
+	}
+}

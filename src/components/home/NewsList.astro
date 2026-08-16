@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = (await getCollection('news'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const dateFormatter = new Intl.DateTimeFormat(lang === 'th' ? 'th-TH' : 'en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<section class="border-b border-line py-24">
+  <div class="container-page">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow mb-4">{t('news.eyebrow')}</p>
+        <h2 class="max-w-xl text-3xl font-bold text-navy-900">{t('news.heading')}</h2>
+      </div>
+      <a href={localizePath('/news', lang)} class="text-sm font-medium text-accent hover:underline">
+        {t('news.viewAll')} &rarr;
+      </a>
+    </div>
+
+    <ul class="mt-14 divide-y divide-line border-t border-line">
+      {
+        items.map((item) => (
+          <li>
+            <a
+              href={localizePath(`/news/${item.id}`, lang)}
+              class="flex flex-col gap-2 py-7 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+            >
+              <span class="font-display text-lg font-bold text-navy-900 hover:text-accent">
+                {item.data.title[lang]}
+              </span>
+              <span class="shrink-0 text-sm text-navy-300">{dateFormatter.format(item.data.date)}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

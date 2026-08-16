@@ -1,0 +1,49 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const { links } = member.data;
+
+const socialLinks = [
+  { key: 'linkedin', label: 'LinkedIn', href: links.linkedin },
+  { key: 'scholar', label: 'Google Scholar', href: links.scholar },
+  { key: 'orcid', label: 'ORCID', href: links.orcid },
+  { key: 'researchgate', label: 'ResearchGate', href: links.researchgate },
+  { key: 'website', label: lang === 'th' ? 'เว็บไซต์ส่วนตัว' : 'Website', href: links.website },
+].filter((l) => l.href);
+
+if (socialLinks.length === 0 && !links.email) return null;
+---
+
+<section class="py-16">
+  <div class="container-page">
+    <p class="eyebrow mb-8">{t('profile.contact')}</p>
+    <ul class="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium">
+      {
+        links.email && (
+          <li>
+            <a href={`mailto:${links.email}`} class="text-navy-700 hover:text-accent">
+              {links.email}
+            </a>
+          </li>
+        )
+      }
+      {
+        socialLinks.map((l) => (
+          <li>
+            <a href={l.href} target="_blank" rel="noopener noreferrer" class="text-navy-700 hover:text-accent">
+              {l.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

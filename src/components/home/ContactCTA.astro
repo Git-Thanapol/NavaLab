@@ -1,0 +1,26 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lang: Lang;
+  site: CollectionEntry<'site'>;
+}
+
+const { lang, site } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="bg-navy-900 py-24 text-paper">
+  <div class="container-page max-w-2xl text-center">
+    <p class="eyebrow mx-auto justify-center text-accent">{t('contact.eyebrow')}</p>
+    <h2 class="mt-4 text-3xl font-bold">{t('contact.heading')}</h2>
+    <p class="mt-4 text-navy-300">{t('contact.body')}</p>
+    <a
+      href={`mailto:${site.data.contactEmail}`}
+      class="mt-8 inline-block border border-paper px-7 py-3 text-sm font-medium transition-colors hover:bg-paper hover:text-navy-900"
+    >
+      {t('contact.emailCta')}
+    </a>
+  </div>
+</section>

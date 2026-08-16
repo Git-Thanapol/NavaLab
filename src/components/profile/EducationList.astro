@@ -1,0 +1,39 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  member: CollectionEntry<'members'>;
+  lang: Lang;
+}
+
+const { member, lang } = Astro.props;
+const t = useTranslations(lang);
+const education = member.data.education;
+
+if (education.length === 0) return null;
+---
+
+<section class="border-b border-line bg-mist py-16">
+  <div class="container-page max-w-2xl">
+    <p class="eyebrow mb-8">{t('profile.education')}</p>
+    <ul class="space-y-6">
+      {
+        education
+          .slice()
+          .sort((a, b) => (b.year ?? 0) - (a.year ?? 0))
+          .map((edu) => (
+            <li class="flex items-baseline justify-between gap-6 border-t border-line pt-4">
+              <div>
+                <p class="font-display text-base font-bold text-navy-900">
+                  {edu.degree[lang]}, {edu.field[lang]}
+                </p>
+                <p class="mt-1 text-sm text-navy-500">{edu.institution[lang]}</p>
+              </div>
+              {edu.year && <span class="shrink-0 text-sm text-navy-300">{edu.year}</span>}
+            </li>
+          ))
+      }
+    </ul>
+  </div>
+</section>
