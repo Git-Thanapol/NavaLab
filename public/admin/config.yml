@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: navalab/navalab-site # TODO: แก้เป็น owner/repo จริงก่อน deploy
+  repo: Git-Thanapol/NavaLab
   branch: main
-  base_url: https://navalab.example.org/oauth # TODO: แก้เป็นโดเมนจริง — ต้องตรงกับ SITE_DOMAIN ใน .env และ OAuth App callback URL
+  base_url: https://navalab.org/oauth
 
 local_backend: true
 
