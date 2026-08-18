@@ -18,11 +18,71 @@
 
 ## ขั้นตอน
 
-### 1. สร้าง GitHub Personal Access Token
+### 1. เตรียมเครื่อง (SSH เข้า VPS)
+
+SSH เข้าเครื่องด้วย user ที่มีสิทธิ์ `sudo` (หรือ root) แล้วรันตามลำดับ:
+
+```bash
+apt update && apt upgrade -y
+
+# ลง Docker Engine + compose plugin จาก repo ทางการของ Docker
+# (อย่าใช้ apt install docker.io — เวอร์ชันเก่าเกินไป ใช้กับสแต็กนี้ไม่ได้)
+curl -fsSL https://get.docker.com | sh
+apt install -y docker-compose-plugin
+```
+
+**ทดสอบทันทีหลังลงเสร็จ ก่อนทำอย่างอื่นต่อ:**
+
+```bash
+systemd-detect-virt          # ต้องได้ kvm หรือ qemu
+docker run --rm hello-world  # ต้องรันผ่านและ print ข้อความสำเร็จ
+free -h                      # ยืนยันว่าเห็น RAM 4 GB ตามที่ซื้อจริง
+```
+
+ถ้า `systemd-detect-virt` ไม่ใช่ `kvm`/`qemu` (เช่นได้ `openvz` หรือ `lxc`) **ให้หยุดตรงนี้** —
+เครื่องแบบนั้นรัน Docker ไม่ได้เต็มรูปแบบ ต้องติดต่อผู้ให้บริการเปลี่ยนเครื่องก่อน อย่าทำขั้นถัดไป
+
+ถ้า `free -h` แสดง swap เป็น 0 ให้สร้าง swapfile กันไว้ (`astro build` จะได้ไม่โดน OOM
+kill ตอนช่วง build peak แรม):
+
+```bash
+fallocate -l 2G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+echo '/swapfile none swap sw 0 0' >> /etc/fstab
+```
+
+ตั้ง firewall เปิดแค่พอร์ตที่ใช้จริง (22 สำหรับ SSH, 80/443 สำหรับเว็บ):
+
+```bash
+ufw allow 22
+ufw allow 80
+ufw allow 443
+ufw enable
+```
+
+สุดท้าย clone repo ไปไว้ที่ `/srv`:
+
+```bash
+mkdir -p /srv/navalab
+cd /srv/navalab
+git clone https://github.com/Git-Thanapol/NavaLab.git .
+```
+
+ขั้นตอนที่เหลือด้านล่าง (`.env`, `config.yml`, `docker compose up`) ให้ทำจากในโฟลเดอร์
+`/srv/navalab` นี้ทั้งหมด
+
+**ข้อควรระวัง:** ตั้งค่า `.env` (มีค่า secret จริงทั้งหมด) โดยพิมพ์ผ่าน `nano .env` หรือ
+`vim .env` **บนเครื่อง VPS นี้โดยตรงเท่านั้น** ห้ามพิมพ์ค่าจริงแล้วเก็บไว้ในเครื่องคอมพิวเตอร์
+ส่วนตัวที่ sync กับ cloud storage (Google Drive, OneDrive ฯลฯ) — ถ้าไฟล์นั้นหลุดขึ้น cloud
+sync ต้อง revoke/regenerate ค่าที่หลุดทั้งหมดทันที
+
+### 2. สร้าง GitHub Personal Access Token
 
 Settings → Developer settings → Fine-grained tokens → สร้างใหม่ ให้สิทธิ์ `Contents: Read-only` กับ repo นี้เท่านั้น ใช้เป็นค่า `GITHUB_TOKEN`
 
-### 2. สร้าง GitHub OAuth App (สำหรับ CMS login)
+### 3. สร้าง GitHub OAuth App (สำหรับ CMS login)
 
 GitHub → Settings → Developer settings → OAuth Apps → New OAuth App
 
@@ -31,7 +91,7 @@ GitHub → Settings → Developer settings → OAuth Apps → New OAuth App
 
 จะได้ Client ID และ Client Secret มาใส่ในไฟล์ `.env`
 
-### 3. ตั้งค่า `.env`
+### 4. ตั้งค่า `.env`
 
 ```bash
 cp .env.example .env
@@ -39,11 +99,11 @@ cp .env.example .env
 
 แก้ทุกค่าใน `.env` ให้ตรงกับของจริง (โดเมน, token, secret ต่างๆ) — สุ่ม secret ด้วย `openssl rand -hex 32`
 
-### 4. แก้ `public/admin/config.yml`
+### 5. แก้ `public/admin/config.yml`
 
 แก้บรรทัด `repo:` ให้เป็น `owner/repo` จริง และ `base_url:` ให้ตรงกับโดเมนจริง (`https://<โดเมน>/oauth`) แล้ว commit push ขึ้น GitHub
 
-### 5. รันสแต็ก
+### 6. รันสแต็ก
 
 ```bash
 docker compose up -d --build
@@ -51,7 +111,7 @@ docker compose up -d --build
 
 ครั้งแรก `builder` จะ clone repo แล้ว build ทันที ดู log ได้ด้วย `docker compose logs -f builder`
 
-### 6. ตั้ง GitHub Webhook
+### 7. ตั้ง GitHub Webhook
 
 Repo → Settings → Webhooks → Add webhook
 

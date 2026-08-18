@@ -15,20 +15,19 @@ bioShort:
     maritime operations specialist.
 bio:
   th: >-
-    อธิพัชร์เกิดที่จังหวัดชลบุรี เริ่มต้นเส้นทางในอุตสาหกรรมทางทะเลในตำแหน่งนายประจำเรือที่ Highland
-    Maritime ก่อนย้ายมาทำงานด้านปฏิบัติการท่าเรือและตัวแทนเรือกับ A.P. Moller - Maersk และต่อมาเป็น
-    ผู้วางแผนด้านความปลอดภัยทางทะเลระดับภูมิภาคที่ VIKING Life-Saving Equipment ปัจจุบันกำลังศึกษาต่อ
+    อธิพัชร์เกิดที่จังหวัดชลบุรี เริ่มต้นเส้นทางในอุตสาหกรรมทางทะเลในตำแหน่งนายประจำเรือ
+    ก่อนย้ายมาทำงานด้านปฏิบัติการท่าเรือและตัวแทนเรือ และต่อมาเป็น
+    ผู้วางแผนด้านความปลอดภัยทางทะเลระดับภูมิภาค ปัจจุบันกำลังศึกษาต่อ
     ปริญญาโทด้านเทคโนโลยีทางทะเลและโลจิสติกส์ที่ Tokyo University of Marine Science and Technology
     โดยมีงานวิจัยที่สนใจคือการบริหารจัดการการจราจรทางน้ำและการเลือกเส้นทางเดินเรือในพื้นที่หนาแน่น
     ในฐานะผู้ร่วมก่อตั้ง NavaLab อธิพัชร์ดูแลด้านการประสานงานชุมชนและเชื่อมโยงสมาชิกในกลุ่ม
   en: >-
-    Born in Chon Buri, Thailand, Athiphach began his maritime career as a Third Officer at
-    Highland Maritime before moving into port operations and agency work with A.P. Moller -
-    Maersk, and later regional marine safety planning at VIKING Life-Saving Equipment. He is
-    currently pursuing a Master's degree in Maritime Technology and Logistics at Tokyo University
-    of Marine Science and Technology, with a research focus on optimizing traffic management and
-    route selection in congested sea areas. As Co-Founder of NavaLab, he leads community
-    coordination and connects the group's members.
+    Born in Chon Buri, Thailand, Athiphach began his maritime career as a Third Officer
+    before moving into port operations and agency work, and later regional marine safety
+    planning. He is currently pursuing a Master's degree in Maritime Technology and Logistics
+    at Tokyo University of Marine Science and Technology, with a research focus on optimizing
+    traffic management and route selection in congested sea areas. As Co-Founder of NavaLab,
+    he leads community coordination and connects the group's members.
 expertise:
   th:
     - ปฏิบัติการเดินเรือ

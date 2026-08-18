@@ -8,8 +8,6 @@ summary:
 cover: ../../assets/placeholders/projects/low-cost-reef-survey-auv.svg
 status: ongoing
 year: 2024
-members:
-  - piyawan-suksawat
-  - nara-chaiyasit
+members: []
 featured: true
 ---

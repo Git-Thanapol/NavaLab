@@ -8,7 +8,6 @@ summary:
 cover: ../../assets/placeholders/projects/gulf-of-thailand-erosion-risk-map.svg
 status: completed
 year: 2021
-members:
-  - supaporn-rattanakul
+members: []
 featured: false
 ---

@@ -8,8 +8,6 @@ summary:
 cover: ../../assets/placeholders/projects/fuel-efficient-hulls-for-fishing-vessels.svg
 status: ongoing
 year: 2024
-members:
-  - nara-chaiyasit
-  - kritsada-wongsuwan
+members: []
 featured: true
 ---

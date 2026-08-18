@@ -8,7 +8,6 @@ summary:
 cover: ../../assets/placeholders/projects/engineered-mangrove-wave-barriers.svg
 status: ongoing
 year: 2023
-members:
-  - supaporn-rattanakul
+members: []
 featured: true
 ---
