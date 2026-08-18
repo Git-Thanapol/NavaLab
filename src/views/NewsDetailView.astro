@@ -11,7 +11,22 @@ interface Props {
 
 const { lang, item } = Astro.props;
 const { data } = item;
-const paragraphs = data.body[lang].split(/\n{2,}/).filter(Boolean);
+
+// Split on fenced code blocks first so blank lines *inside* a code block
+// don't get mistaken for a paragraph break by the plain-text splitter below.
+type Block = { type: 'code' | 'text'; content: string };
+const blocks: Block[] = [];
+const fenceRe = /```[^\n]*\n([\s\S]*?)\n?```/g;
+let lastIndex = 0;
+let match: RegExpExecArray | null;
+while ((match = fenceRe.exec(data.body[lang]))) {
+  const before = data.body[lang].slice(lastIndex, match.index);
+  blocks.push(...before.split(/\n{2,}/).filter(Boolean).map((content) => ({ type: 'text' as const, content })));
+  blocks.push({ type: 'code' as const, content: match[1] });
+  lastIndex = fenceRe.lastIndex;
+}
+const rest = data.body[lang].slice(lastIndex);
+blocks.push(...rest.split(/\n{2,}/).filter(Boolean).map((content) => ({ type: 'text' as const, content })));
 
 const dateFormatter = new Intl.DateTimeFormat(lang === 'th' ? 'th-TH' : 'en-US', {
   year: 'numeric',
@@ -43,7 +58,15 @@ const ogImage = data.cover ? await getImage({ src: data.cover, width: 1200, heig
       }
 
       <div class="mt-10 space-y-5 text-base leading-relaxed text-navy-700">
-        {paragraphs.map((p) => <p>{p}</p>)}
+        {
+          blocks.map((block) =>
+            block.type === 'code' ? (
+              <pre class="overflow-x-auto rounded-lg bg-navy-900 p-4 text-sm text-accent-100"><code class="font-mono whitespace-pre">{block.content}</code></pre>
+            ) : (
+              <p>{block.content}</p>
+            )
+          )
+        }
       </div>
     </div>
   </article>
