@@ -91,7 +91,7 @@ research:
   completed: []
 publications: []
 links:
-  email: j.athiphach@gmail.com
+  email: athiphach@navalab.org
   linkedin: https://www.linkedin.com/in/athiphach-jirachokthanasak
 featured: true
 ---
