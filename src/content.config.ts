@@ -68,6 +68,7 @@ const projects = defineCollection({
     z.object({
       title: localized,
       summary: localized,
+      body: localized.optional(),
       cover: image(),
       status: z.enum(['ongoing', 'completed']),
       year: z.number(),

@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 4
 name:
   th: นฤพันธ์ โชติช่วง
   en: Naruphun Chotechuang
@@ -74,14 +74,14 @@ experience:
     period: ""
 education:
   - degree:
-      th: ปริญญาตรี (วท.บ.)
-      en: Bachelor of Science
+      th: ปริญญาเอก (กำลังศึกษา)
+      en: PhD (In Progress)
     field:
-      th: ปฏิบัติการหน่วยยามฝั่งและการบังคับใช้กฎหมาย
-      en: Coast Guard Operations and Law Enforcement
+      th: วิทยาศาสตร์ทางทะเล
+      en: Marine Science
     institution:
-      th: Japan Coast Guard Academy
-      en: Japan Coast Guard Academy
+      th: Tokyo University of Marine Science and Technology
+      en: Tokyo University of Marine Science and Technology
   - degree:
       th: ปริญญาโท
       en: Master of Marine Science
@@ -92,14 +92,14 @@ education:
       th: Tokyo University of Marine Science and Technology
       en: Tokyo University of Marine Science and Technology
   - degree:
-      th: ปริญญาเอก (กำลังศึกษา)
-      en: PhD (In Progress)
+      th: ปริญญาตรี (วท.บ.)
+      en: Bachelor of Science
     field:
-      th: วิทยาศาสตร์ทางทะเล
-      en: Marine Science
+      th: ปฏิบัติการหน่วยยามฝั่งและการบังคับใช้กฎหมาย
+      en: Coast Guard Operations and Law Enforcement
     institution:
-      th: Tokyo University of Marine Science and Technology
-      en: Tokyo University of Marine Science and Technology
+      th: Japan Coast Guard Academy
+      en: Japan Coast Guard Academy
 research:
   current:
     - title:

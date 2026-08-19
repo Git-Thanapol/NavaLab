@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 6
 name:
   th: ธวัชชัย เอ็นดู
   en: Tawatchai Endoo
@@ -38,14 +38,14 @@ expertise:
 experience: []
 education:
   - degree:
-      th: ปริญญาตรี
-      en: Bachelor's Degree
+      th: ปริญญาเอก (กำลังศึกษา)
+      en: PhD (In Progress)
     field:
-      th: วิทยาศาสตร์การเดินเรือ
-      en: Nautical Science
+      th: Marine Technology
+      en: Marine Technology
     institution:
-      th: มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตศรีราชา
-      en: Kasetsart University, Sriracha Campus
+      th: Tokyo University of Marine Science and Technology
+      en: Tokyo University of Marine Science and Technology
   - degree:
       th: ปริญญาโท
       en: Master's Degree
@@ -56,14 +56,14 @@ education:
       th: Tokyo University of Marine Science and Technology
       en: Tokyo University of Marine Science and Technology
   - degree:
-      th: ปริญญาเอก (กำลังศึกษา)
-      en: PhD (In Progress)
+      th: ปริญญาตรี
+      en: Bachelor's Degree
     field:
-      th: Marine Technology
-      en: Marine Technology
+      th: วิทยาศาสตร์การเดินเรือ
+      en: Nautical Science
     institution:
-      th: Tokyo University of Marine Science and Technology
-      en: Tokyo University of Marine Science and Technology
+      th: มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตศรีราชา
+      en: Kasetsart University, Sriracha Campus
 research:
   current:
     - title:

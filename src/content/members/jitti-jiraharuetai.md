@@ -38,25 +38,16 @@ expertise:
     - Ship Manoeuvring Simulation
 experience:
   - role:
-      th: อาจารย์พิเศษ
-      en: Instructor & Specialty Lecturer
-    organization: Kasetsart University (KU)
-    period: Jul 2024 – Dec 2024
-  - role:
       th: รักษาการกัปตันเรือ (เริ่มต้นเป็นต้นเรือ)
       en: Acting Captain (started as Chief Officer)
     organization: Thoresen Thai Agencies (TTA)
     period: Jun 2013 – Aug 2025
+  - role:
+      th: อาจารย์พิเศษ
+      en: Instructor & Specialty Lecturer
+    organization: Kasetsart University (KU)
+    period: Jul 2024 – Dec 2024
 education:
-  - degree:
-      th: ปริญญาตรี
-      en: Bachelor's Degree
-    field:
-      th: วิทยาการเดินเรือ
-      en: Nautical Science / International Maritime Studies
-    institution:
-      th: มหาวิทยาลัยเกษตรศาสตร์
-      en: Kasetsart University
   - degree:
       th: ปริญญาโท (กำลังศึกษา)
       en: Master's Degree (In Progress)
@@ -66,6 +57,15 @@ education:
     institution:
       th: Tokyo University of Marine Science and Technology
       en: Tokyo University of Marine Science and Technology
+  - degree:
+      th: ปริญญาตรี
+      en: Bachelor's Degree
+    field:
+      th: วิทยาการเดินเรือ
+      en: Nautical Science / International Maritime Studies
+    institution:
+      th: มหาวิทยาลัยเกษตรศาสตร์
+      en: Kasetsart University
 research:
   current:
     - title:

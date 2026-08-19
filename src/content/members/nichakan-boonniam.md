@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 7
 name:
   th: ณิชากาณต์ บุญเนียม
   en: Nichakan Boonniam
@@ -38,15 +38,6 @@ expertise:
 experience: []
 education:
   - degree:
-      th: ปริญญาตรี
-      en: Bachelor's Degree
-    field:
-      th: การขนส่งทางทะเล
-      en: Maritime Transportation
-    institution:
-      th: มหาวิทยาลัยเกษตรศาสตร์
-      en: Kasetsart University
-  - degree:
       th: ปริญญาโท (กำลังศึกษา)
       en: Master's Degree (In Progress)
     field:
@@ -55,6 +46,15 @@ education:
     institution:
       th: Tokyo University of Marine Science and Technology
       en: Tokyo University of Marine Science and Technology
+  - degree:
+      th: ปริญญาตรี
+      en: Bachelor's Degree
+    field:
+      th: การขนส่งทางทะเล
+      en: Maritime Transportation
+    institution:
+      th: มหาวิทยาลัยเกษตรศาสตร์
+      en: Kasetsart University
 research:
   current:
     - title:

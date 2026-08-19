@@ -1,7 +1,7 @@
 ---
 title:
-  th: NavaLab คว้ารางวัลชนะเลิศ Mirai Catalyst Hackathon Challenge 2026 ด้วยผลงาน ScanTu
-  en: NavaLab Wins Mirai Catalyst Hackathon Challenge 2026 with ScanTu
+  th: สมาชิก NavaLab คว้ารางวัลชนะเลิศ Mirai Catalyst Hackathon Challenge 2026 ด้วยผลงาน ScanTu
+  en: Members of NavaLab Win Mirai Catalyst Hackathon Challenge 2026 with ScanTu
 date: '2026-08-09'
 cover: ../../assets/news/mirai-catalyst-2026-winning-team.jpg
 excerpt:

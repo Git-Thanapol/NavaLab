@@ -60,15 +60,6 @@ experience:
     period: May 2017 – Feb 2019
 education:
   - degree:
-      th: ปริญญาตรี
-      en: Bachelor's Degree
-    field:
-      th: วิทยาการเดินเรือ
-      en: Nautical Science
-    institution:
-      th: มหาวิทยาลัยเกษตรศาสตร์
-      en: Kasetsart University
-  - degree:
       th: ปริญญาโท (กำลังศึกษา)
       en: Master's Degree (In Progress)
     field:
@@ -77,6 +68,15 @@ education:
     institution:
       th: Tokyo University of Marine Science and Technology
       en: Tokyo University of Marine Science and Technology
+  - degree:
+      th: ปริญญาตรี
+      en: Bachelor's Degree
+    field:
+      th: วิทยาการเดินเรือ
+      en: Nautical Science
+    institution:
+      th: มหาวิทยาลัยเกษตรศาสตร์
+      en: Kasetsart University
 research:
   current:
     - title:

@@ -182,6 +182,13 @@ collections:
         fields:
           - { label: "ไทย", name: th, widget: text }
           - { label: "English", name: en, widget: text }
+      - label: "เนื้อหาเต็ม (ถ้ามี) / Full body (optional)"
+        name: body
+        widget: object
+        required: false
+        fields:
+          - { label: "ไทย (เว้นบรรทัดว่างเพื่อขึ้นย่อหน้าใหม่)", name: th, widget: text, required: false }
+          - { label: "English (blank line = new paragraph)", name: en, widget: text, required: false }
       - { label: "ภาพปก / Cover image", name: cover, widget: image }
       - label: "สถานะ / Status"
         name: status

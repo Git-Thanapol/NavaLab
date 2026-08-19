@@ -15,6 +15,7 @@ const t = useTranslations(lang);
 const { data } = project;
 const members = data.members.length ? await getEntries(data.members) : [];
 const ogImage = await getImage({ src: data.cover, width: 1200, height: 630 });
+const bodyParagraphs = data.body ? data.body[lang].split(/\n{2,}/).filter(Boolean) : [];
 ---
 
 <BaseLayout
@@ -35,6 +36,14 @@ const ogImage = await getImage({ src: data.cover, width: 1200, height: 630 });
       </p>
       <h1 class="text-3xl font-bold text-navy-900 sm:text-4xl">{data.title[lang]}</h1>
       <p class="mt-6 text-lg leading-relaxed text-navy-500">{data.summary[lang]}</p>
+
+      {
+        bodyParagraphs.length > 0 && (
+          <div class="mt-8 space-y-5 text-base leading-relaxed text-navy-700">
+            {bodyParagraphs.map((p) => <p>{p}</p>)}
+          </div>
+        )
+      }
 
       {
         members.length > 0 && (
