@@ -26,6 +26,11 @@
   --font-display: 'IBM Plex Sans Thai', sans-serif;
   --font-sans: 'Noto Serif Thai', sans-serif;
 
+  /* Bump body-copy sizes (text-base/text-lg) without touching text-sm, which
+     UI chrome — nav, buttons, labels — relies on staying compact. */
+  --text-base: 1.125rem;
+  --text-lg: 1.25rem;
+
   /* layout */
   --container-page: 1200px;
   --spacing-section: 7rem;

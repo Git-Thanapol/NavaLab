@@ -68,6 +68,28 @@ const ogImage = data.cover ? await getImage({ src: data.cover, width: 1200, heig
           )
         }
       </div>
+
+      {
+        data.gallery.length > 0 && (
+          <div class="mt-14 space-y-10">
+            {data.gallery.map((entry) => (
+              <figure>
+                <div class="overflow-hidden border border-line">
+                  <Image
+                    src={entry.image}
+                    alt={entry.caption[lang]}
+                    width={1200}
+                    class="h-auto w-full"
+                  />
+                </div>
+                {entry.caption[lang] && (
+                  <figcaption class="mt-3 text-sm text-navy-300">{entry.caption[lang]}</figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        )
+      }
     </div>
   </article>
 </BaseLayout>

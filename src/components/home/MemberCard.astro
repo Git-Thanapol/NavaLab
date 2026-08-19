@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import PortraitCutout from '../PortraitCutout.astro';
 import type { CollectionEntry } from 'astro:content';
 import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
 
@@ -17,15 +17,12 @@ const href = localizePath(`/team/${member.id}`, lang);
   href={href}
   class="group block animate-fade-up text-center"
 >
-  <div class="mx-auto mb-5 h-40 w-40 overflow-hidden rounded-full ring-1 ring-line transition-shadow group-hover:ring-accent">
-    <Image
-      src={member.data.photo}
-      alt={member.data.name[lang]}
-      width={320}
-      height={320}
-      class="h-full w-full object-cover"
-    />
-  </div>
+  <PortraitCutout
+    photo={member.data.photo}
+    alt={member.data.name[lang]}
+    backdropIndex={member.data.order}
+    class="mx-auto mb-5 w-40 ring-1 ring-line transition-shadow group-hover:ring-accent"
+  />
   <p class="text-xs font-medium uppercase tracking-wide text-navy-300">
     {member.data.role[lang]}
   </p>

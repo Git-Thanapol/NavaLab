@@ -45,6 +45,11 @@ const { data } = member;
       </div>
     </div>
 
-    <PortraitCutout photo={data.photo} alt={data.name[lang]} class="mx-auto max-w-lg" />
+    <PortraitCutout
+      photo={data.photo}
+      alt={data.name[lang]}
+      class="mx-auto max-w-lg"
+      backdropIndex={data.order}
+    />
   </div>
 </section>

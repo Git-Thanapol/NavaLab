@@ -9,24 +9,24 @@ role:
 photo: ../../assets/members/jitti-jiraharuetai.png
 bioShort:
   th: >-
-    อาจารย์พิเศษด้านการเดินเรือและอดีตนายเรือเอก มีประสบการณ์เดินเรือกว่า 12 ปี
+    อาจารย์พิเศษด้านการเดินเรือและอดีตรักษาการกัปตันเรือ มีประสบการณ์เดินเรือกว่า 12 ปี
   en: >-
-    Instructor in maritime studies and former Chief Officer with over 12 years of seagoing
+    Instructor in maritime studies and former Acting Captain with over 12 years of seagoing
     experience.
 bio:
   th: >-
     จิตติเกิดที่จังหวัดชลบุรี จบการศึกษาระดับปริญญาตรีสาขาวิทยาการเดินเรือ ก่อนสั่งสมประสบการณ์ในทะเล
-    จนขึ้นสู่ตำแหน่งนายเรือเอกเป็นเวลากว่า 12 ปี ต่อมาผันตัวมาเป็นอาจารย์พิเศษสอนด้านการเดินเรือ
-    ระหว่างประเทศ ปัจจุบันกำลังศึกษาต่อปริญญาโทด้านเทคโนโลยีทางทะเลและโลจิสติกส์ที่ Tokyo University
-    of Marine Science and Technology โดยมีงานวิจัยที่สนใจด้านการจำลองเส้นทางเดินเรือด้วยแบบจำลอง
-    คณิตศาสตร์การเคลื่อนที่ของเรือและระบบควบคุม
+    เป็นเวลากว่า 12 ปี ไต่เต้าจากต้นเรือจนได้รับตำแหน่งสุดท้ายคือรักษาการกัปตันเรือ ต่อมาผันตัวมา
+    เป็นอาจารย์พิเศษสอนด้านการเดินเรือระหว่างประเทศ ปัจจุบันกำลังศึกษาต่อปริญญาโทด้านเทคโนโลยีทางทะเล
+    และโลจิสติกส์ที่ Tokyo University of Marine Science and Technology โดยมีงานวิจัยที่สนใจด้าน
+    การจำลองเส้นทางเดินเรือด้วยแบบจำลองคณิตศาสตร์การเคลื่อนที่ของเรือและระบบควบคุม
   en: >-
     Born in Chon Buri, Thailand, Jitti earned a Bachelor's degree in Nautical Science before
-    spending over 12 years at sea, rising to the rank of Chief Officer. He later transitioned
-    into teaching, serving as an instructor in international maritime studies. He is currently
-    pursuing a Master's degree in Maritime Technology and Logistics at Tokyo University of
-    Marine Science and Technology, with a research focus on ship route simulation using
-    manoeuvring mathematical modeling and control systems.
+    spending over 12 years at sea, rising from Chief Officer to his final position as Acting
+    Captain. He later transitioned into teaching, serving as an instructor in international
+    maritime studies. He is currently pursuing a Master's degree in Maritime Technology and
+    Logistics at Tokyo University of Marine Science and Technology, with a research focus on
+    ship route simulation using manoeuvring mathematical modeling and control systems.
 expertise:
   th:
     - การเดินเรือ
@@ -43,8 +43,8 @@ experience:
     organization: Kasetsart University (KU)
     period: Jul 2024 – Dec 2024
   - role:
-      th: นายเรือเอก
-      en: Chief Officer
+      th: รักษาการกัปตันเรือ (เริ่มต้นเป็นต้นเรือ)
+      en: Acting Captain (started as Chief Officer)
     organization: Thoresen Thai Agencies (TTA)
     period: Jun 2013 – Aug 2025
 education:

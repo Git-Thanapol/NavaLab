@@ -85,6 +85,9 @@ const news = defineCollection({
       cover: image().optional(),
       excerpt: localized,
       body: localized,
+      gallery: z
+        .array(z.object({ image: image(), caption: localized }))
+        .default([]),
     }),
 });
 
@@ -94,6 +97,7 @@ const site = defineCollection({
     heroHeading: localized,
     heroSub: localized,
     visionStatement: localized,
+    missionPillars: z.array(z.object({ title: localized, description: localized })).default([]),
     expertiseAreas: z.array(z.object({ title: localized, description: localized })),
     contactEmail: z.string().email(),
     socials: z.object({

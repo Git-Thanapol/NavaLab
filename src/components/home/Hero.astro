@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import logoMark from '../../assets/brand/mark.png';
+import heroBackground from '../../assets/home/hero-background.png';
 import { useTranslations, localizePath, type Lang } from '../../i18n/ui';
 import type { CollectionEntry } from 'astro:content';
 
@@ -13,8 +14,32 @@ const { lang, site } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<section class="border-b border-line bg-mist">
-  <div class="container-page grid gap-12 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-32">
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <Image
+      src={heroBackground}
+      alt=""
+      class="h-full w-full object-cover"
+      widths={[640, 1024, 1672]}
+      sizes="100vw"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-paper via-paper/75 to-paper/10"></div>
+    <div class="absolute inset-0 bg-paper/25"></div>
+  </div>
+
+  <svg
+    class="absolute inset-x-0 bottom-0 h-16 w-full text-paper sm:h-24"
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path
+      fill="currentColor"
+      d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,64 L1440,120 L0,120 Z"
+    ></path>
+  </svg>
+
+  <div class="container-page relative grid gap-12 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-32">
     <div class="animate-fade-up">
       <Image src={logoMark} alt="" class="mb-8 h-10 w-10" />
       <p class="eyebrow mb-6">{t('hero.eyebrow')}</p>
@@ -26,17 +51,32 @@ const t = useTranslations(lang);
       </p>
       <a
         href={localizePath('/#team', lang)}
-        class="mt-10 inline-block border border-navy-900 px-7 py-3 text-sm font-medium text-navy-900 transition-colors hover:bg-navy-900 hover:text-paper"
+        class="group mt-10 inline-flex items-center gap-2 bg-navy-900 px-7 py-3 text-sm font-medium text-paper transition-colors hover:bg-accent"
       >
         {t('hero.cta')}
+        <svg
+          class="h-4 w-4 transition-transform group-hover:translate-x-1"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M2 8h11.5M9 3.5 13.5 8 9 12.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></path>
+        </svg>
       </a>
     </div>
 
     <div class="relative hidden md:block">
-      <div class="absolute -right-6 top-4 h-64 w-64 -rotate-6 bg-accent/90"></div>
-      <div class="relative ml-auto h-80 w-64 border border-line bg-paper p-8">
-        <p class="font-display text-lg italic leading-relaxed text-navy-700">
-          &ldquo;{site.data.visionStatement[lang]}&rdquo;
+      <div class="absolute -right-3 top-6 h-[calc(100%-1.5rem)] w-3 bg-accent"></div>
+      <div class="relative ml-auto w-72 border border-line bg-paper p-8 shadow-xl shadow-navy-900/10">
+        <span class="font-display text-4xl leading-none text-accent" aria-hidden="true">&ldquo;</span>
+        <p class="mt-2 font-display text-lg italic leading-relaxed text-navy-700">
+          {site.data.visionStatement[lang]}
         </p>
       </div>
     </div>

@@ -5,72 +5,114 @@
       "en": "Understanding the Sea Through Technology and Research"
     },
     "heroSub": {
-      "th": "NavaLab คือชุมชนนักวิจัยเทคโนโลยีทางทะเลที่รวมผู้เชี่ยวชาญหลากสาขาไว้ด้วยกัน ตั้งแต่พลศาสตร์ของไหล หุ่นยนต์ใต้น้ำ ไปจนถึงนโยบายชายฝั่ง",
-      "en": "NavaLab is a community of maritime technology researchers spanning hydrodynamics, underwater robotics, and coastal policy."
+      "th": "NavaLab คือชุมชนนักวิจัยเทคโนโลยีทางทะเลที่รวมผู้เชี่ยวชาญหลากสาขาไว้ด้วยกัน ตั้งแต่ปัญญาประดิษฐ์ทางทะเล แบบจำลองเส้นทางเรือ ไปจนถึงความปลอดภัยและความยั่งยืนของท่าเรือ",
+      "en": "NavaLab is a community of maritime technology researchers spanning marine AI, ship route simulation, and port safety and sustainability."
     },
     "visionStatement": {
       "th": "เรามุ่งพัฒนาความรู้และเทคโนโลยีทางทะเลของไทยให้แข่งขันได้ในระดับสากล พร้อมส่งต่อองค์ความรู้กลับสู่ชุมชนชายฝั่ง",
       "en": "We work to advance Thai maritime technology to a globally competitive standard, while channeling that knowledge back to coastal communities."
     },
+    "missionPillars": [
+      {
+        "title": {
+          "th": "ชุมชนนักวิจัยผู้เชี่ยวชาญ",
+          "en": "A Community of Expert Researchers"
+        },
+        "description": {
+          "th": "รวมพลังนักวิจัยและผู้เชี่ยวชาญจากหลากหลายสาขา เพื่อพัฒนางานวิจัยและนวัตกรรมทางทะเล",
+          "en": "Bringing together researchers and experts across disciplines to advance maritime research and innovation."
+        }
+      },
+      {
+        "title": {
+          "th": "เทคโนโลยีทางทะเล",
+          "en": "Maritime Technology"
+        },
+        "description": {
+          "th": "พัฒนาเทคโนโลยีและระบบอัตโนมัติเพื่อเพิ่มประสิทธิภาพ ความปลอดภัย และความยั่งยืนของภาคการเดินเรือ",
+          "en": "Developing technology and automated systems to improve the efficiency, safety, and sustainability of shipping."
+        }
+      },
+      {
+        "title": {
+          "th": "งานวิจัยและนวัตกรรม",
+          "en": "Research & Innovation"
+        },
+        "description": {
+          "th": "สร้างองค์ความรู้ใหม่ผ่านงานวิจัยที่ตอบโจทย์ความท้าทายของอุตสาหกรรมและสังคมทางทะเล",
+          "en": "Generating new knowledge through research that addresses real challenges in maritime industry and society."
+        }
+      },
+      {
+        "title": {
+          "th": "ส่งต่อความรู้สู่สังคม",
+          "en": "Sharing Knowledge with Society"
+        },
+        "description": {
+          "th": "เผยแพร่องค์ความรู้และเทคโนโลยีเพื่อสร้างผลกระทบเชิงบวกต่อชุมชนและสิ่งแวดล้อมชายฝั่ง",
+          "en": "Disseminating knowledge and technology to create positive impact for coastal communities and the environment."
+        }
+      }
+    ],
     "expertiseAreas": [
       {
         "title": {
-          "th": "พลศาสตร์ของไหล",
-          "en": "Hydrodynamics"
+          "th": "ปัญญาประดิษฐ์ทางทะเล",
+          "en": "Marine AI & Machine Learning"
         },
         "description": {
-          "th": "การออกแบบตัวเรือและจำลองการไหลด้วยคอมพิวเตอร์",
-          "en": "Hull design and computational flow simulation."
+          "th": "การเรียนรู้เชิงลึกและแบบจำลอง ML สำหรับพยากรณ์และวินิจฉัยระบบเรือ",
+          "en": "Deep learning and ML models for vessel diagnostics and prediction."
         }
       },
       {
         "title": {
-          "th": "หุ่นยนต์ทางทะเล",
-          "en": "Marine Robotics"
+          "th": "แบบจำลองเส้นทางเรือและความเสี่ยงการชน",
+          "en": "Ship Route & Collision-Risk Simulation"
         },
         "description": {
-          "th": "ยานใต้น้ำอัตโนมัติและระบบสำรวจ",
-          "en": "Autonomous underwater vehicles and survey systems."
+          "th": "แบบจำลองคณิตศาสตร์การเคลื่อนที่เรือและระบบสนับสนุนการหลบหลีก",
+          "en": "Manoeuvring mathematical models and collision-avoidance decision support."
         }
       },
       {
         "title": {
-          "th": "วิศวกรรมชายฝั่ง",
-          "en": "Coastal Engineering"
+          "th": "ความปลอดภัยและการรับรู้สถานการณ์ของนักเดินเรือ",
+          "en": "Navigator Safety & Situation Awareness"
         },
         "description": {
-          "th": "การป้องกันการกัดเซาะและแนวทางเชิงธรรมชาติ",
-          "en": "Erosion control and nature-based approaches."
+          "th": "การประเมินความเสี่ยงการชนและการฝึกอบรมนักเดินเรือในพื้นที่หนาแน่น",
+          "en": "Collision-risk assessment and navigator training in congested waters."
         }
       },
       {
         "title": {
-          "th": "วัสดุทางทะเล",
-          "en": "Marine Materials"
+          "th": "การวางแผนท่าเรือและความยั่งยืนชายฝั่ง",
+          "en": "Port Planning & Coastal Sustainability"
         },
         "description": {
-          "th": "การกัดกร่อนและสารเคลือบป้องกัน",
-          "en": "Corrosion behavior and protective coatings."
+          "th": "การวางแผนปฏิบัติการท่าเรือและการพัฒนาเมืองชายฝั่งอย่างยั่งยืน",
+          "en": "Port operations planning and sustainable coastal urban development."
         }
       },
       {
         "title": {
-          "th": "คลื่นเสียงใต้น้ำ",
-          "en": "Underwater Acoustics"
+          "th": "การวิเคราะห์ข้อมูลทางทะเลและเรือ",
+          "en": "Maritime Data & Vessel Analytics"
         },
         "description": {
-          "th": "ระบบโซนาร์และการประเมินปริมาณสัตว์น้ำ",
-          "en": "Sonar systems and stock assessment."
+          "th": "การวิเคราะห์ข้อมูล AIS และแบบจำลองพยากรณ์เวลาถึงของเรือ",
+          "en": "AIS data analysis and vessel arrival-time prediction models."
         }
       },
       {
         "title": {
-          "th": "นโยบายทางทะเล",
-          "en": "Marine Policy"
+          "th": "ปฏิบัติการเดินเรือและการศึกษาทางทะเล",
+          "en": "Vessel Operations & Maritime Education"
         },
         "description": {
-          "th": "เชื่อมงานวิจัยสู่นโยบายและความยั่งยืน",
-          "en": "Connecting research to policy and sustainability."
+          "th": "ประสบการณ์ปฏิบัติการเดินเรือจริงควบคู่กับการถ่ายทอดความรู้สู่คนรุ่นใหม่",
+          "en": "Real-world vessel operations experience paired with maritime education for the next generation."
         }
       }
     ],

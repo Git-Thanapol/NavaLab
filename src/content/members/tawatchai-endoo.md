@@ -80,7 +80,14 @@ research:
           refines collision-risk weight parameters to each navigator's experience level via
           grid-search aggregation, improving detection of significant targets in congested waters.
   completed: []
-publications: []
+publications:  
+  - title: "A Study on a Situation Awareness Model for Navigators in Congested Waters"
+    authors: "T. Endoo, C. Nishizaki, T. Okazaki"
+    venue: "TransNav"
+    year: 2025
+    doi: "DOI: 10.12716/1001.19.04.06"
+    url: "http://dx.doi.org/10.12716/1001.19.04.06"
+    
 links:
   email: tawatchai@navalab.org
 featured: false

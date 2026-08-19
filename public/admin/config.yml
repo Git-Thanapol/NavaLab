@@ -230,6 +230,19 @@ collections:
         fields:
           - { label: "ไทย (เว้นบรรทัดว่างเพื่อขึ้นย่อหน้าใหม่)", name: th, widget: text }
           - { label: "English (blank line = new paragraph)", name: en, widget: text }
+      - label: "ภาพประกอบเพิ่มเติม / Gallery"
+        name: gallery
+        widget: list
+        required: false
+        default: []
+        fields:
+          - { label: "รูปภาพ / Image", name: image, widget: image }
+          - label: "คำบรรยายภาพ / Caption"
+            name: caption
+            widget: object
+            fields:
+              - { label: "ไทย", name: th, widget: string }
+              - { label: "English", name: en, widget: string }
 
   - name: site
     label: "ตั้งค่าเว็บไซต์ / Site Settings"
@@ -261,6 +274,24 @@ collections:
                 fields:
                   - { label: "ไทย", name: th, widget: text }
                   - { label: "English", name: en, widget: text }
+              - label: "พันธกิจ / Mission pillars"
+                name: missionPillars
+                widget: list
+                required: false
+                default: []
+                fields:
+                  - label: "หัวข้อ / Title"
+                    name: title
+                    widget: object
+                    fields:
+                      - { label: "ไทย", name: th, widget: string }
+                      - { label: "English", name: en, widget: string }
+                  - label: "คำอธิบาย / Description"
+                    name: description
+                    widget: object
+                    fields:
+                      - { label: "ไทย", name: th, widget: text }
+                      - { label: "English", name: en, widget: text }
               - label: "ความเชี่ยวชาญของกลุ่ม / Expertise areas"
                 name: expertiseAreas
                 widget: list

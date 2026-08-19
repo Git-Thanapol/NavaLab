@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/home/Hero.astro';
+import MissionGrid from '../components/home/MissionGrid.astro';
 import ExpertiseGrid from '../components/home/ExpertiseGrid.astro';
 import FeaturedResearch from '../components/home/FeaturedResearch.astro';
 import TeamGrid from '../components/home/TeamGrid.astro';
@@ -34,6 +35,7 @@ const jsonLd = {
   jsonLd={jsonLd}
 >
   <Hero lang={lang} site={site} />
+  <MissionGrid lang={lang} site={site} />
   <ExpertiseGrid lang={lang} site={site} />
   <FeaturedResearch lang={lang} />
   <TeamGrid lang={lang} />

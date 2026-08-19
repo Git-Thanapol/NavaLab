@@ -1,0 +1,43 @@
+---
+import { useTranslations, type Lang } from '../../i18n/ui';
+import type { CollectionEntry } from 'astro:content';
+import iconPeople from 'bootstrap-icons/icons/people.svg?raw';
+import iconLifePreserver from 'bootstrap-icons/icons/life-preserver.svg?raw';
+import iconFileText from 'bootstrap-icons/icons/file-earmark-text.svg?raw';
+import iconShare from 'bootstrap-icons/icons/share.svg?raw';
+
+interface Props {
+  lang: Lang;
+  site: CollectionEntry<'site'>;
+}
+
+const { lang, site } = Astro.props;
+const t = useTranslations(lang);
+
+// One icon per missionPillars entry, in the same order as home.json.
+const icons = [iconPeople, iconLifePreserver, iconFileText, iconShare];
+---
+
+<section class="border-b border-line py-24">
+  <div class="container-page">
+    <p class="eyebrow mb-4">{t('mission.eyebrow')}</p>
+    <h2 class="max-w-xl text-3xl font-bold text-navy-900">{t('mission.heading')}</h2>
+
+    <div class="mt-14 grid gap-x-8 gap-y-14 text-center sm:grid-cols-2 lg:grid-cols-4">
+      {
+        site.data.missionPillars.map((pillar, i) => (
+          <div>
+            <div
+              class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-100 text-accent [&>svg]:h-7 [&>svg]:w-7"
+              set:html={icons[i % icons.length]}
+            />
+            <h3 class="mt-5 font-display text-lg font-bold text-navy-900">{pillar.title[lang]}</h3>
+            <p class="mx-auto mt-2 max-w-[28ch] text-sm leading-relaxed text-navy-500">
+              {pillar.description[lang]}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

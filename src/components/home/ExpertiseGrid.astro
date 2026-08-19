@@ -1,6 +1,12 @@
 ---
 import { useTranslations, type Lang } from '../../i18n/ui';
 import type { CollectionEntry } from 'astro:content';
+import iconCpu from 'bootstrap-icons/icons/cpu.svg?raw';
+import iconCompass from 'bootstrap-icons/icons/compass.svg?raw';
+import iconShieldCheck from 'bootstrap-icons/icons/shield-check.svg?raw';
+import iconBuilding from 'bootstrap-icons/icons/building.svg?raw';
+import iconGraphUp from 'bootstrap-icons/icons/graph-up.svg?raw';
+import iconMortarboard from 'bootstrap-icons/icons/mortarboard.svg?raw';
 
 interface Props {
   lang: Lang;
@@ -9,6 +15,9 @@ interface Props {
 
 const { lang, site } = Astro.props;
 const t = useTranslations(lang);
+
+// One icon per expertiseAreas entry, in the same order as home.json.
+const icons = [iconCpu, iconCompass, iconShieldCheck, iconBuilding, iconGraphUp, iconMortarboard];
 ---
 
 <section class="border-b border-line py-24">
@@ -16,13 +25,19 @@ const t = useTranslations(lang);
     <p class="eyebrow mb-4">{t('expertise.eyebrow')}</p>
     <h2 class="max-w-xl text-3xl font-bold text-navy-900">{t('expertise.heading')}</h2>
 
-    <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-14 grid gap-x-8 gap-y-14 text-center sm:grid-cols-2 lg:grid-cols-3">
       {
         site.data.expertiseAreas.map((area, i) => (
-          <div class="border-t border-line pt-6">
-            <span class="text-xs font-medium text-navy-300">{String(i + 1).padStart(2, '0')}</span>
-            <h3 class="mt-2 font-display text-xl font-bold text-navy-900">{area.title[lang]}</h3>
-            <p class="mt-2 text-sm leading-relaxed text-navy-500">{area.description[lang]}</p>
+          <div>
+            <div
+              class="mx-auto grid h-16 w-16 place-items-center rounded-full bg-accent-100 text-accent [&>svg]:h-7 [&>svg]:w-7"
+              set:html={icons[i % icons.length]}
+            />
+            <h3 class="mt-5 font-display text-xl font-bold text-navy-900">{area.title[lang]}</h3>
+            <p class="mx-auto mt-2 max-w-[26ch] text-sm leading-relaxed text-navy-500">
+              {area.description[lang]}
+            </p>
+            <span class="mx-auto mt-5 block h-0.5 w-10 bg-accent"></span>
           </div>
         ))
       }

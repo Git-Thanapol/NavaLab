@@ -1,7 +1,7 @@
 ---
 order: 5
 name:
-  th: Kritsada Darasiri
+  th: กฤษฎา ดะราศิริ
   en: Kritsada Darasiri
 role:
   th: ที่ปรึกษา
@@ -22,7 +22,7 @@ bio:
     ทางทะเล จากนั้นศึกษาต่อปริญญาโทด้านเทคโนโลยีทางทะเลและโลจิสติกส์ และปัจจุบันกำลังศึกษาปริญญาเอก
     สาขาวิศวกรรมสมุทรศาสตร์ประยุกต์ ภายใต้โครงการ WISE (World-leading Innovative & Smart Education)
     ที่ Tokyo University of Marine Science and Technology ซึ่งเป็นโครงการระดับชาติเพื่อสร้างบุคลากร
-    AI สำหรับอุตสาหกรรมทางทะเล งานวิจัยของเขามุ่งเน้นการผสานวิธีการควบคุมแบบขับเคลื่อนด้วยข้อมูลและ
+    AI สำหรับอุตสาหกรรมทางทะเล งานวิจัยมุ่งเน้นการผสานวิธีการควบคุมแบบขับเคลื่อนด้วยข้อมูลและ
     แบบจำลองทางฟิสิกส์ เพื่อพัฒนาระบบควบคุมการเคลื่อนที่ของเรืออัตโนมัติ
   en: >-
     Kritsada is a maritime AI and control engineering researcher specializing in AI-based control
