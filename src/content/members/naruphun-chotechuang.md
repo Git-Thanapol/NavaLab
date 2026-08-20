@@ -4,8 +4,8 @@ name:
   th: นฤพันธ์ โชติช่วง
   en: Naruphun Chotechuang
 role:
-  th: กรรมการบริหาร
-  en: Executive Member
+  th: สมาชิกสมทบ
+  en: Associate Member
 photo: ../../assets/members/naruphun-chotechuang.png
 bioShort:
   th: >-
