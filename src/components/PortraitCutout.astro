@@ -10,10 +10,13 @@ interface Props {
   class?: string;
   /** Alternates the backdrop pattern — pass e.g. a member's `order` field. */
   backdropIndex?: number;
+  /** Wavy navy-gradient band over the bottom, to hide a bad bottom crop. */
+  waveMask?: boolean;
 }
 
-const { photo, alt, class: className = '', backdropIndex = 0 } = Astro.props;
+const { photo, alt, class: className = '', backdropIndex = 0, waveMask = false } = Astro.props;
 const backdrop = backdropIndex % 2 === 0 ? backdrop1 : backdrop2;
+const waveGradientId = `wave-gradient-${crypto.randomUUID()}`;
 ---
 
 <div class:list={['relative aspect-square w-full overflow-hidden rounded-full', className]}>
@@ -25,4 +28,21 @@ const backdrop = backdropIndex % 2 === 0 ? backdrop1 : backdrop2;
     sizes="(min-width: 1024px) 420px, 70vw"
     class="absolute left-1/2 top-1/2 h-[92%] w-[92%] -translate-x-1/2 -translate-y-1/2 object-contain object-center"
   />
+  {
+    waveMask && (
+      <svg class="absolute inset-x-0 bottom-0 w-full" viewBox="0 0 100 24" aria-hidden="true">
+        <defs>
+          <linearGradient id={waveGradientId} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#58CCED" stop-opacity="0.90" />
+            <stop offset="55%" stop-color="#3895D3" stop-opacity="1" />
+            <stop offset="100%" stop-color="#1261A0" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <path
+          d="M0,6 C6.25,2 18.75,2 25,6 C31.25,10 43.75,10 50,6 C56.25,2 68.75,2 75,6 C81.25,10 93.75,10 100,6 L100,24 L0,24 Z"
+          fill={`url(#${waveGradientId})`}
+        />
+      </svg>
+    )
+  }
 </div>

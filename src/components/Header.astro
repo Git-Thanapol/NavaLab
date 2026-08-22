@@ -15,6 +15,7 @@ const t = useTranslations(lang);
 
 const navItems = [
   { href: '/', label: t('nav.home') },
+  { href: '/mission', label: t('nav.mission') },
   { href: '/#team', label: t('nav.team') },
   { href: '/projects', label: t('nav.projects') },
   { href: '/news', label: t('nav.news') },
@@ -25,7 +26,7 @@ const navItems = [
 <header class="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
   <div class="container-page flex h-20 items-center justify-between py-4">
     <a href={localizePath('/', lang)} class="shrink-0">
-      <Image src={fullLogo} alt="NavaLab — Maritime Specialists Community" class="h-9 w-auto sm:h-10" />
+      <Image src={fullLogo} alt="NavaLab-TH — Maritime Specialists Community" class="h-11 w-auto sm:h-12" />
     </a>
 
     <nav class="hidden items-center gap-8 md:flex" aria-label="Main">

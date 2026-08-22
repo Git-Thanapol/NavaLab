@@ -1,0 +1,407 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+import iconPeople from 'bootstrap-icons/icons/people.svg?raw';
+import iconDiagram from 'bootstrap-icons/icons/diagram-3.svg?raw';
+import iconGear from 'bootstrap-icons/icons/gear-wide-connected.svg?raw';
+import iconBuildings from 'bootstrap-icons/icons/buildings.svg?raw';
+import iconAward from 'bootstrap-icons/icons/award.svg?raw';
+import iconArrowRight from 'bootstrap-icons/icons/arrow-right.svg?raw';
+import iconCheck from 'bootstrap-icons/icons/check2.svg?raw';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const problems = [
+  {
+    title: { th: 'บุคลากรกระจัดกระจาย', en: 'Scattered talent' },
+    desc: {
+      th: 'นักวิจัยต่างคนต่างทำงาน คนที่มีความเชี่ยวชาญต่างกันไม่ได้ร่วมมือกันมากพอ',
+      en: 'Researchers work in isolation — people with complementary expertise rarely collaborate.',
+    },
+  },
+  {
+    title: { th: 'องค์ความรู้กระจัดกระจาย', en: 'Scattered knowledge' },
+    desc: {
+      th: 'ความรู้และเทคโนโลยีไม่ถูกสะสมเป็นขีดความสามารถร่วมของประเทศ',
+      en: 'Knowledge and technology never accumulate into a shared national capability.',
+    },
+  },
+  {
+    title: { th: 'ช่องว่างวิจัย–ใช้งานจริง', en: 'Research-to-practice gap' },
+    desc: {
+      th: 'งานวิจัยจำนวนมากจบที่ Paper หรือ Simulation ไปไม่ถึง Prototype และการใช้งานจริง',
+      en: 'Most research stops at papers or simulations, rarely reaching prototypes or real use.',
+    },
+  },
+  {
+    title: { th: 'Brain Drain', en: 'Brain drain' },
+    desc: {
+      th: 'นักวิจัยฝีมือดีต้องออกไปทำงานต่างประเทศ เพราะในประเทศยัง ไม่มี ecosystem และเส้นทางอาชีพรองรับ',
+      en: 'Talented researchers move abroad because the ecosystem and career path at home aren’t there yet.',
+    },
+  },
+  {
+    title: { th: 'สูญเสียสินทรัพย์ทางปัญญา', en: 'Loss of IP' },
+    desc: {
+      th: 'ประเทศไทยเสี่ยงสูญเสียทั้งคน ความรู้ และ IP ไปพร้อมกัน',
+      en: 'Thailand risks losing people, knowledge, and IP all at once.',
+    },
+  },
+];
+
+const ownership = [
+  { th: 'วิจัย — ตั้งโจทย์และทำวิจัยได้เอง', en: 'Research — set the questions and do the work ourselves' },
+  { th: 'พัฒนา — ต่อยอดองค์ความรู้ให้เป็นเทคโนโลยี', en: 'Develop — turn knowledge into technology' },
+  { th: 'ออกแบบเชิงวิศวกรรม', en: 'Engineer — real engineering design' },
+  { th: 'สร้างและประกอบระบบได้เอง', en: 'Build — build and assemble the system ourselves' },
+  { th: 'ถือครองทรัพย์สินทางปัญญาในประเทศ', en: 'Own IP — keep the IP in Thailand' },
+  { th: 'ทดสอบและพิสูจน์สมรรถนะได้', en: 'Validate — test and prove performance' },
+  { th: 'ต่อยอดสู่การใช้งานเชิงพาณิชย์', en: 'Commercialize — bring it to market' },
+];
+
+const flow = [
+  { th: 'วิจัย', en: 'Research' },
+  { th: 'เทคโนโลยี', en: 'Technology' },
+  { th: 'ต้นแบบ', en: 'Prototype' },
+  { th: 'พิสูจน์ผล', en: 'Validation' },
+  { th: 'เชิงพาณิชย์', en: 'Commercialization' },
+  { th: 'ตลาดโลก', en: 'Global Market' },
+];
+
+const missions = [
+  {
+    code: 'M1',
+    icon: iconPeople,
+    title: { th: 'รวมคนที่กระจัดกระจายให้เป็นเครือข่ายเดียว', en: 'Unite scattered people into one network' },
+    desc: {
+      th: 'เชื่อมโยงนักวิจัย วิศวกร นักศึกษา และผู้เชี่ยวชาญด้าน Maritime Technology จากมหาวิทยาลัย ห้องปฏิบัติการ และองค์กรต่าง ๆ ให้ทำงานร่วมกันอย่างเป็นระบบ',
+      en: 'Connect researchers, engineers, students, and maritime-tech specialists across universities, labs, and organizations so they work together systematically.',
+    },
+  },
+  {
+    code: 'M2',
+    icon: iconDiagram,
+    title: { th: 'เปลี่ยนขีดความสามารถของแต่ละคน ให้เป็นขีดความสามารถร่วม', en: 'Turn individual capability into collective capability' },
+    desc: {
+      th: 'Maritime Technology ซับซ้อนและต้องใช้หลายศาสตร์ร่วมกัน ไม่มีใครเก่งทุกด้าน เราจึงรวมความเชี่ยวชาญที่ต่างกันเพื่อสร้างสิ่งที่คนคนเดียวทำไม่ได้',
+      en: 'Maritime technology is complex and multidisciplinary — no one person can master it all. We combine different expertise to build what one person alone cannot.',
+    },
+  },
+  {
+    code: 'M3',
+    icon: iconGear,
+    title: { th: 'พัฒนางานวิจัยให้กลายเป็นเทคโนโลยีใช้งานได้จริง', en: 'Turn research into real, working technology' },
+    desc: {
+      th: 'ผลักดันผลงานจาก Paper และ Simulation ไปสู่ Prototype, Laboratory Validation และ Field Testing โดยมีเป้าหมายที่ Operational Technology',
+      en: 'Push work from papers and simulations toward prototypes, lab validation, and field testing — aiming for real operational technology.',
+    },
+  },
+  {
+    code: 'M4',
+    icon: iconBuildings,
+    title: { th: 'เชื่อมงานวิจัยเข้ากับภาคอุตสาหกรรม', en: 'Connect research with industry' },
+    desc: {
+      th: 'นำโจทย์จริงจากภาคอุตสาหกรรมเข้าสู่กระบวนการวิจัย และส่งเทคโนโลยีที่พัฒนาแล้วกลับไปใช้งานจริง เพื่อให้ ecosystem เติบโตต่อเนื่อง',
+      en: 'Bring real industry problems into the research process, and send finished technology back out into real use — so the ecosystem keeps growing.',
+    },
+  },
+  {
+    code: 'M5',
+    icon: iconAward,
+    title: { th: 'สร้างเส้นทางอาชีพ เพื่อรักษาคนเก่งไว้ในประเทศ', en: 'Build a career path to keep talent in Thailand' },
+    desc: {
+      th: 'สร้างเส้นทางอาชีพใหม่สำหรับผู้ที่อยากสร้างเทคโนโลยีในประเทศไทย ลดปัญหา Brain Drain ให้คน ความรู้ และ IP ยังคงอยู่กับประเทศ',
+      en: 'Create a new career path for people who want to build technology in Thailand — reducing brain drain and keeping people, knowledge, and IP at home.',
+    },
+  },
+];
+
+const dna = [
+  {
+    title: { th: 'สร้าง', en: 'Create' },
+    desc: {
+      th: 'สร้างสิ่งที่ประเทศไทยยังไม่มี ไม่ใช่แค่ศึกษาหรือทำตามเทคโนโลยีต่างประเทศ แต่ต้องสร้างเทคโนโลยีของเราเอง',
+      en: 'Build what Thailand doesn’t yet have — not just study or copy foreign technology, but create our own.',
+    },
+  },
+  {
+    title: { th: 'รวม', en: 'Unite' },
+    desc: {
+      th: 'รวมคน ความรู้ ข้อมูล ซอฟต์แวร์ ฮาร์ดแวร์ ห้องปฏิบัติการ เครือข่าย และประสบการณ์ที่ต่างกัน ให้เป็นขีดความสามารถที่ใหญ่กว่าสมาชิกแต่ละคน',
+      en: 'Bring together different people, knowledge, data, software, hardware, labs, networks, and experience into a capability bigger than any one member.',
+    },
+  },
+];
+
+const disciplines = [
+  'Marine Engine',
+  'System Control',
+  'AI / Machine Learning',
+  'Automatic Berthing',
+  'Collision Avoidance',
+  'Route Planning',
+  'Communication',
+  'Propulsion',
+  'ETA',
+  'Marine Cyber Security',
+  'Software Engineering',
+  'Ship Maneuvering Mode',
+];
+
+const scopeShip = {
+  title: { th: 'เทคโนโลยีเรือและงานทะเล', en: 'Ship & Marine Technology' },
+  items: [
+    'Ship Technology',
+    'Autonomous Vessels',
+    'Maritime AI',
+    'Route Planning',
+    'Cyber Security',
+    'Support System',
+    'Collision Avoidance',
+  ],
+};
+
+const scopeWider = {
+  title: { th: 'เทคโนโลยีทางทะเลในภาพกว้าง', en: 'Wider Maritime Technology' },
+  items: ['Offshore Technology', 'Port Technology', 'Logistics', 'Maritime Safety', 'Defense Technology'],
+};
+---
+
+<BaseLayout
+  lang={lang}
+  cleanPath="/mission"
+  title={t('mission.heading')}
+  description={t('mission.heading')}
+>
+  <!-- Hero -->
+  <section class="border-b border-line py-24">
+    <div class="container-page max-w-2xl">
+      <p class="eyebrow">{t('mission.eyebrow')}</p>
+      <h1 class="mt-4 text-4xl font-bold text-navy-900 sm:text-5xl">{t('mission.heading')}</h1>
+    </div>
+  </section>
+
+  <!-- 1. Background -->
+  <section class="border-b border-line py-20">
+    <div class="container-page max-w-3xl">
+      <p class="eyebrow mb-4">{lang === 'th' ? 'บทนำและที่มา' : 'Background'}</p>
+      <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">
+        {lang === 'th' ? 'จุดเริ่มต้นของกลุ่ม' : 'Where we started'}
+      </h2>
+      <p class="mt-5 leading-relaxed text-navy-700">
+        {
+          lang === 'th'
+            ? 'ประเทศไทยมีอุตสาหกรรมทางทะเลขนาดใหญ่และมีมูลค่าทางเศรษฐกิจสูง แต่ความสามารถในการพัฒนา Maritime Technology ด้วยตนเองยังไม่แข็งแรงพอ ทั้งที่มีนักวิจัยด้านนี้กระจายตัวอยู่ตามมหาวิทยาลัย ห้องปฏิบัติการ และองค์กรต่าง ๆ โดยยังไม่ถูกเชื่อมโยงกันอย่างเป็นระบบ'
+            : 'Thailand has a large, economically significant maritime industry, but its ability to develop maritime technology in-house is still weak — even though researchers in this field already exist across universities, labs, and organizations, just not yet connected systematically.'
+        }
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        {
+          problems.map((p) => (
+            <div class="border border-line p-5">
+              <h3 class="font-display text-base font-bold text-navy-900">{p.title[lang]}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-navy-500">{p.desc[lang]}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-10 border-l-2 border-accent pl-5 leading-relaxed text-navy-700">
+        {
+          lang === 'th'
+            ? 'เราต้องการรวมคนที่กระจัดกระจาย เพื่อสร้างความสามารถในการพัฒนา Maritime Technology ของประเทศไทยร่วมกัน — นี่คือเหตุผลที่ Maritime Technology Research Community ถือกำเนิดขึ้น'
+            : 'We want to unite the people who are scattered, to build Thailand’s maritime-technology capability together — this is why the Maritime Technology Research Community exists.'
+        }
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Vision -->
+  <section class="border-b border-line py-20">
+    <div class="container-page max-w-3xl">
+      <p class="eyebrow mb-4">{lang === 'th' ? 'วิสัยทัศน์' : 'Vision'}</p>
+      <blockquote class="text-2xl leading-snug font-bold text-navy-900 sm:text-3xl">
+        {
+          lang === 'th'
+            ? '“ผลักดันและสนับสนุน ecosystem ที่ทำให้ประเทศไทยสามารถพัฒนาและเป็นเจ้าของ Maritime Technology ได้ด้วยตัวเอง”'
+            : '“To drive and strengthen an ecosystem that enables Thailand to develop and own its maritime innovation and technology.”'
+        }
+      </blockquote>
+
+      <h3 class="mt-12 font-display text-lg font-bold text-navy-900">
+        {lang === 'th' ? 'คำว่า “เป็นเจ้าของ” หมายถึงอะไร' : 'What “own” means'}
+      </h3>
+      <p class="mt-3 leading-relaxed text-navy-500">
+        {
+          lang === 'th'
+            ? 'ไม่ใช่แค่นำเทคโนโลยีต่างประเทศมาใช้ แต่ต้องมีความสามารถเต็มรูปแบบ ตั้งแต่'
+            : 'Not just using technology brought in from abroad, but having the full capability to:'
+        }
+      </p>
+
+      <ul class="mt-5 grid gap-3 sm:grid-cols-2">
+        {
+          ownership.map((o) => (
+            <li class="flex items-start gap-2 text-sm text-navy-700">
+              <span class="mt-1 h-4 w-4 shrink-0 text-accent [&>svg]:h-4 [&>svg]:w-4" set:html={iconCheck} />
+              <span>{o[lang]}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-14">
+        <h3 class="font-display text-lg font-bold text-navy-900">
+          {lang === 'th' ? 'ไม่ได้ต้องการแค่ Research Community' : 'More than a research community'}
+        </h3>
+        <p class="mt-3 leading-relaxed text-navy-500">
+          {
+            lang === 'th'
+              ? 'เป้าหมายคือ Maritime Technology Ecosystem ที่ครบวงจร ตั้งแต่ต้นน้ำถึงปลายน้ำ — Paper จึงไม่ใช่ปลายทาง แต่เป็นเพียงหนึ่งขั้นตอนของการสร้างเทคโนโลยี'
+              : 'The goal is a complete, end-to-end maritime-technology ecosystem — a paper is never the destination, just one step toward building technology.'
+          }
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-2 gap-y-3">
+          {
+            flow.map((step, i) => (
+              <>
+                <span class="border border-line bg-mist px-4 py-2 text-sm font-medium text-navy-900">
+                  {step[lang]}
+                </span>
+                {i < flow.length - 1 && (
+                  <span class="h-3.5 w-3.5 text-navy-300 [&>svg]:h-3.5 [&>svg]:w-3.5" set:html={iconArrowRight} />
+                )}
+              </>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Mission -->
+  <section class="border-b border-line py-20">
+    <div class="container-page">
+      <p class="eyebrow mb-4">{t('mission.eyebrow')}</p>
+      <h2 class="max-w-xl text-2xl font-bold text-navy-900 sm:text-3xl">{t('mission.heading')}</h2>
+
+      <div class="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          missions.map((m) => (
+            <div class="border border-line p-6">
+              <div
+                class="grid h-12 w-12 place-items-center rounded-full bg-accent-100 text-accent [&>svg]:h-6 [&>svg]:w-6"
+                set:html={m.icon}
+              />
+              <p class="mt-4 text-xs font-bold tracking-widest text-accent">{m.code}</p>
+              <h3 class="mt-1 font-display text-base font-bold text-navy-900">{m.title[lang]}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-navy-500">{m.desc[lang]}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Philosophy & values -->
+  <section class="border-b border-line py-20">
+    <div class="container-page max-w-3xl">
+      <p class="eyebrow mb-4">{lang === 'th' ? 'ปรัชญาและค่านิยม' : 'Philosophy & Values'}</p>
+      <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">
+        {lang === 'th' ? 'DNA ของกลุ่ม' : 'Our DNA'}
+      </h2>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        {
+          dna.map((d) => (
+            <div class="border border-line p-6">
+              <span class="font-display text-3xl font-bold text-accent">{d.title[lang]}</span>
+              <p class="mt-3 text-sm leading-relaxed text-navy-500">{d.desc[lang]}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <p class="mt-12 border-l-2 border-accent pl-5 text-lg leading-relaxed font-medium text-navy-900">
+        {
+          lang === 'th'
+            ? '“ผมมีปัญหานี้ แต่ผมไม่จำเป็นต้องแก้มันคนเดียว”'
+            : '“I have this problem — but I no longer have to solve it alone.”'
+        }
+      </p>
+      <p class="mt-4 leading-relaxed text-navy-500">
+        {
+          lang === 'th'
+            ? 'ถ้าคนหนึ่งมีงานวิจัย อีกคนมีวิศวกรรม อีกคนมีเครือข่ายอุตสาหกรรม อีกคนมีฮาร์ดแวร์ และอีกคนมี AI เราสามารถนำสิ่งเหล่านี้มาประกอบกันเป็นเทคโนโลยีเดียวกันได้ นี่คือเหตุผลหลักของการมี Community'
+            : 'If one person has research, another has engineering, another has industry connections, another has hardware, and another has AI — together they can assemble one technology. This is the core reason the community exists.'
+        }
+      </p>
+
+      <div class="mt-8">
+        <p class="text-sm font-medium text-navy-900">
+          {
+            lang === 'th'
+              ? 'ตัวอย่าง: การสร้าง Autonomous Vessel เพียงหนึ่งระบบ ต้องอาศัยความเชี่ยวชาญหลายสาขาพร้อมกัน'
+              : 'Example: building a single Autonomous Vessel system already needs many disciplines at once —'
+          }
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {
+            disciplines.map((d) => (
+              <span class="border border-line bg-mist px-3 py-1.5 text-xs font-medium text-navy-700">{d}</span>
+            ))
+          }
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-navy-500">
+          {
+            lang === 'th'
+              ? 'สมาชิกแต่ละคนไม่จำเป็นต้องรู้ทุกอย่าง แต่เมื่อรวมกัน เราสร้างสิ่งที่คนคนเดียวสร้างไม่ได้'
+              : 'No single member needs to know everything — together, we build what one person alone cannot.'
+          }
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Scope -->
+  <section class="py-20">
+    <div class="container-page max-w-3xl">
+      <p class="eyebrow mb-4">{lang === 'th' ? 'ขอบเขต' : 'Scope'}</p>
+      <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">
+        {lang === 'th' ? 'ขอบเขตของ Maritime Technology' : 'The scope of Maritime Technology'}
+      </h2>
+      <p class="mt-4 leading-relaxed text-navy-500">
+        {
+          lang === 'th'
+            ? 'เราไม่จำกัดตัวเองอยู่ใน technology ด้านเดียว เพราะ Maritime Technology ในอนาคตคือการบูรณาการหลายศาสตร์เข้าด้วยกัน สิ่งสำคัญไม่ใช่การแบ่งว่าใครอยู่ domain ไหน แต่คือการสร้าง cross-domain collaboration'
+            : 'We don’t limit ourselves to one slice of technology — maritime technology is inherently multidisciplinary. What matters isn’t which domain someone belongs to, but cross-domain collaboration.'
+        }
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        {
+          [scopeShip, scopeWider].map((group) => (
+            <div class="border border-line p-6">
+              <h3 class="font-display text-base font-bold text-navy-900">{group.title[lang]}</h3>
+              <ul class="mt-4 space-y-2">
+                {group.items.map((item) => (
+                  <li class="flex items-center gap-2 text-sm text-navy-700">
+                    <span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

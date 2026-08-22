@@ -4,7 +4,7 @@ name:
   th: ณิชากาณต์ บุญเนียม
   en: Nichakan Boonniam
 role:
-  th: สมาชิกสมทบ
+  th: ภาคีสมาชิก
   en: Associate Member
 photo: ../../assets/members/nichakan-boonniam.png
 bioShort:

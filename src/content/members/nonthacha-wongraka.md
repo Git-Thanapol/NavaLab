@@ -9,10 +9,10 @@ role:
 photo: ../../assets/members/nonthacha-wongraka.png
 bioShort:
   th: >-
-    ผู้ร่วมก่อตั้ง NavaLab มีประสบการณ์ด้านปฏิบัติการเดินเรือและตำแหน่ง Freight Forwarder
+    ผู้ร่วมก่อตั้ง NavaLab-TH มีประสบการณ์ด้านปฏิบัติการเดินเรือและตำแหน่ง Freight Forwarder
     ในธุรกิจนำเข้า-ส่งออกทางทะเล
   en: >-
-    Co-Founder of NavaLab with a background in vessel operations and as a Freight Forwarder in
+    Co-Founder of NavaLab-TH with a background in vessel operations and as a Freight Forwarder in
     maritime import/export business.
 bio:
   th: >-
@@ -22,7 +22,7 @@ bio:
     ปริญญาโทด้านเทคโนโลยีทางทะเลที่ Tokyo University of Marine Science and Technology ปัจจุบันกำลัง
     ศึกษาต่อระดับปริญญาเอกที่สถาบันเดียวกัน โดยมีงานวิจัยที่สนใจด้านระบบสนับสนุนการตัดสินใจเดินเรือ
     ที่เสนอเส้นทางหลบหลีกการชนหลายเส้นทาง รวมถึงการผนวกปัจจัยแรงลมและการใช้น้ำมันเชื้อเพลิงเข้ากับ
-    ระบบดังกล่าว ในฐานะผู้ร่วมก่อตั้ง NavaLab นนทชามีบทบาทสำคัญในการก่อตั้งกลุ่มวิจัย
+    ระบบดังกล่าว ในฐานะผู้ร่วมก่อตั้ง NavaLab-TH นนทชามีบทบาทสำคัญในการก่อตั้งกลุ่มวิจัย
   en: >-
     Nonthacha began his career in the maritime industry as a Deck Cadet before moving into
     freight forwarding in import/export logistics for several years. He holds a Bachelor's
@@ -30,7 +30,7 @@ bio:
     Technology from Tokyo University of Marine Science
     and Technology, where he is now pursuing a PhD, with a research focus on navigation decision
     support systems that propose multiple collision-avoidance routes, extended to account for
-    wind disturbance and fuel oil consumption. As Co-Founder of NavaLab, he played a key role in
+    wind disturbance and fuel oil consumption. As Co-Founder of NavaLab-TH, he played a key role in
     establishing the research group.
 expertise:
   th:

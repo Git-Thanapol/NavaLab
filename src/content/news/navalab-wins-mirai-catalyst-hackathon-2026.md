@@ -1,12 +1,12 @@
 ---
 title:
-  th: สมาชิก NavaLab คว้ารางวัลชนะเลิศ Mirai Catalyst Hackathon Challenge 2026 ด้วยผลงาน ScanTu
-  en: Members of NavaLab Win Mirai Catalyst Hackathon Challenge 2026 with ScanTu
+  th: สมาชิก NavaLab-TH คว้ารางวัลชนะเลิศ Mirai Catalyst Hackathon Challenge 2026 ด้วยผลงาน ScanTu
+  en: Members of NavaLab-TH Win Mirai Catalyst Hackathon Challenge 2026 with ScanTu
 date: '2026-08-09'
 cover: ../../assets/news/mirai-catalyst-2026-winning-team.jpg
 excerpt:
-  th: ทีม Krapao Desu ซึ่งมีสมาชิก NavaLab ร่วมทีม คว้ารางวัลชนะเลิศจากผลงาน ScanTu ในงาน Mirai Catalyst Hackathon Challenge 2026 ที่กรุงโตเกียว
-  en: Team Krapao Desu, featuring NavaLab members, won first place with ScanTu at the Mirai Catalyst Hackathon Challenge 2026 in Tokyo.
+  th: ทีม Krapao Desu ซึ่งมีสมาชิก NavaLab-TH ร่วมทีม คว้ารางวัลชนะเลิศจากผลงาน ScanTu ในงาน Mirai Catalyst Hackathon Challenge 2026 ที่กรุงโตเกียว
+  en: Team Krapao Desu, featuring NavaLab-TH members, won first place with ScanTu at the Mirai Catalyst Hackathon Challenge 2026 in Tokyo.
 body:
   th: |
     สำนักงานการวิจัยแห่งชาติ (วช.) กระทรวงการอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม ร่วมกับสมาคม
@@ -16,7 +16,7 @@ body:
     นวัตกรรมที่ใช้ได้จริง ในรอบ Final Pitch ที่ Miraikan – The National Museum of Emerging Science
     and Innovation มีผลงานนวัตกรรม 9 โครงการเข้าร่วมนำเสนอต่อคณะกรรมการผู้ทรงคุณวุฒิ
 
-    ในรอบตัดสิน ทีม Krapao Desu ซึ่งมีธนพล คิดประเสริฐ และอธิพัชร์ จิรโชคธนะศักดิ์ สมาชิก NavaLab
+    ในรอบตัดสิน ทีม Krapao Desu ซึ่งมีธนพล คิดประเสริฐ และอธิพัชร์ จิรโชคธนะศักดิ์ สมาชิก NavaLab-TH
     ร่วมทีม ได้รับรางวัลชนะเลิศจากผลงาน "ScanTu: Digital Inspection Solution" ระบบตรวจสอบสภาพตู้
     คอนเทนเนอร์อัตโนมัติ ผสานการสแกนภายนอกด้วยระบบ Gate แบบ OCR หลายกล้อง เข้ากับหุ่นยนต์ 360 Rover
     สำหรับสแกนภายในด้วยกล้อง 8K และไฟ LED ความสว่างสูง ก่อนประมวลผลด้วยโครงข่าย AI สามชั้น ได้แก่
@@ -41,7 +41,7 @@ body:
     Pitch round, held at Miraikan – The National Museum of Emerging Science and Innovation, nine
     innovation projects were presented to a panel of expert judges.
 
-    In the judging round, team Krapao Desu — featuring NavaLab members Thanapol Kidprasert and
+    In the judging round, team Krapao Desu — featuring NavaLab-TH members Thanapol Kidprasert and
     Athiphach Jirachokthanasak — won first place with "ScanTu: Digital Inspection Solution," an
     automated shipping-container inspection system. It combines an OCR, multi-camera exterior
     scan at the gate with a 360 Rover robot that scans the interior using an 8K camera and

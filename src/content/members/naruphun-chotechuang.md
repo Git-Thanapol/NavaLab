@@ -4,7 +4,7 @@ name:
   th: นฤพันธ์ โชติช่วง
   en: Naruphun Chotechuang
 role:
-  th: สมาชิกสมทบ
+  th: ภาคีสมาชิก
   en: Associate Member
 photo: ../../assets/members/naruphun-chotechuang.png
 bioShort:
@@ -25,7 +25,7 @@ bio:
     ด้าน Marine AI นฤพันธ์จึงเริ่มเฟ้นหาคนรุ่นใหม่ที่สนใจมาศึกษาต่อที่ญี่ปุ่นในสาขานี้ นับตั้งแต่ปี
     2021 เป็นต้นมา มีผู้มาศึกษาต่อด้าน Marine AI และสาขาที่เกี่ยวข้องต่อเนื่องกันมากกว่า 10 คน และ
     เริ่มพูดคุยแลกเปลี่ยนสิ่งที่แต่ละคนได้เรียนรู้ เพื่อหาแนวทางพัฒนาเทคโนโลยีทางทะเลของตนเอง
-    จนกลายมาเป็นจุดเริ่มต้นของ NavaLab ปัจจุบันนฤพันธ์กำลังศึกษาต่อระดับปริญญาเอกที่สถาบันเดียวกัน
+    จนกลายมาเป็นจุดเริ่มต้นของ NavaLab-TH ปัจจุบันนฤพันธ์กำลังศึกษาต่อระดับปริญญาเอกที่สถาบันเดียวกัน
     งานวิจัยครอบคลุมสองแนวทางหลัก ได้แก่ การพัฒนาเมืองชายฝั่งและความยั่งยืนของท่าเรือขนาดใหญ่ในความ
     ร่วมมือกับเครือข่ายนักวิจัยนานาชาติ และการป้องกันอุบัติเหตุเรือชนกันรวมถึงการฝึกอบรมนักเดินเรือ
     ผ่านเรือฝึก โดยมีผลงานตีพิมพ์ในวารสารและการประชุมวิชาการนานาชาติหลายฉบับ
@@ -42,7 +42,7 @@ bio:
     pursuing this field of study in Japan. Since 2021, more than ten people have gone on to study
     Marine AI and related fields in succession, and began exchanging what they had learned to
     find their own path toward developing maritime technology — which became the starting point
-    of NavaLab. He is now pursuing a PhD at the same institution, with research spanning two main
+    of NavaLab-TH. He is now pursuing a PhD at the same institution, with research spanning two main
     threads: sustainable coastal urban development around major ports, conducted with an
     international research network, and ship collision prevention and navigator training aboard
     training vessels. His work has been published across several international journals and

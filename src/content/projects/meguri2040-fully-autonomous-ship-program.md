@@ -30,7 +30,7 @@ body:
     ประจำ) เรือ Ro-Ro Hokuren Maru No. 2 เส้นทางคุชิโระ–ฮิตาชิ (รับรอง ก.พ. 2026) และเรือคอนเทนเนอร์ที่
     ให้บริการอยู่แล้ว Mikage ขนาด 245 TEU เส้นทางโกเบ–นาโกยา (รับรอง มี.ค. 2026)
 
-    ความคืบหน้าของ MEGURI2040 เป็นที่จับตาของวงการเดินเรือทั่วโลก และเกี่ยวข้องโดยตรงกับสมาชิก NavaLab
+    ความคืบหน้าของ MEGURI2040 เป็นที่จับตาของวงการเดินเรือทั่วโลก และเกี่ยวข้องโดยตรงกับสมาชิก NavaLab-TH
     ที่เคยฝึกงานและทำวิจัยในโครงการที่เกี่ยวเนื่องกับ MEGURI2040 ในญี่ปุ่น
   en: |
     MEGURI2040 is the Fully Autonomous Ship Program launched by Japan's Nippon Foundation in
@@ -55,7 +55,7 @@ body:
     the in-service 245-TEU container ship Mikage on the Kobe–Nagoya route (certified March 2026).
 
     MEGURI2040's progress is closely watched across the global maritime industry, and connects
-    directly to NavaLab members who have interned and researched on MEGURI2040-affiliated
+    directly to NavaLab-TH members who have interned and researched on MEGURI2040-affiliated
     projects in Japan.
 cover: ../../assets/projects/meguri2040-logo.jpg
 status: ongoing

@@ -4,7 +4,7 @@ name:
   th: ธวัชชัย เอ็นดู
   en: Tawatchai Endoo
 role:
-  th: สมาชิกสมทบ
+  th: ภาคีสมาชิก
   en: Associate Member
 photo: ../../assets/members/tawatchai-endoo.png
 bioShort:

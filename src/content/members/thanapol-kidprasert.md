@@ -9,10 +9,10 @@ role:
 photo: ../../assets/members/thanapol-kidprasert.png
 bioShort:
   th: >-
-    ผู้ร่วมก่อตั้ง NavaLab หลงใหลในกิจกรรมทางทะเลมาตั้งแต่เด็ก ปัจจุบันทำวิจัยด้าน deep learning
+    ผู้ร่วมก่อตั้ง NavaLab-TH หลงใหลในกิจกรรมทางทะเลมาตั้งแต่เด็ก ปัจจุบันทำวิจัยด้าน deep learning
     เพื่อวินิจฉัยความผิดปกติของใบพัดเรือ
   en: >-
-    Co-Founder of NavaLab, drawn to maritime activities since childhood, now researching deep
+    Co-Founder of NavaLab-TH, drawn to maritime activities since childhood, now researching deep
     learning for vessel propeller fault diagnosis.
 bio:
   th: >-
@@ -22,7 +22,7 @@ bio:
     เกษตรศาสตร์ ก่อนทำงานด้านวิศวกรรมและพัฒนาซอฟต์แวร์มาหลายปี ปัจจุบันกำลังศึกษาต่อในโครงการ
     Marine AI ที่ Tokyo University of Marine Science and Technology โดยมีงานวิจัยเปรียบเทียบ
     สถาปัตยกรรม deep learning สำหรับวินิจฉัยความผิดปกติของใบพัดเรือผิวน้ำไร้คนขับด้วยสัญญาณเสียงใต้น้ำ
-    ในฐานะผู้ร่วมก่อตั้ง NavaLab ธนพลเป็นผู้ริเริ่มก่อตั้งกลุ่มวิจัยนี้ขึ้นมา และดูแลด้านการจัดการ
+    ในฐานะผู้ร่วมก่อตั้ง NavaLab-TH ธนพลเป็นผู้ริเริ่มก่อตั้งกลุ่มวิจัยนี้ขึ้นมา และดูแลด้านการจัดการ
     เทคโนโลยีของกลุ่ม
   en: >-
     Born and raised in the coastal province of Prachuap Khiri Khan, Thanapol has been drawn to
@@ -32,7 +32,7 @@ bio:
     several years of engineering and software development work. He is currently pursuing
     graduate studies in the Marine AI Program at Tokyo University of Marine Science and
     Technology, with research comparing deep learning architectures for diagnosing propeller
-    faults in unmanned surface vessels using hydroacoustic signals. As Co-Founder of NavaLab, he
+    faults in unmanned surface vessels using hydroacoustic signals. As Co-Founder of NavaLab-TH, he
     helped establish the research group and leads its technology management.
 expertise:
   th:

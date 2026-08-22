@@ -9,9 +9,9 @@ role:
 photo: ../../assets/members/athiphach-jirachokthanasak.png
 bioShort:
   th: >-
-    ผู้ร่วมก่อตั้งและผู้ประสานงานชุมชน NavaLab อดีตนายประจำเรือและผู้เชี่ยวชาญด้านปฏิบัติการเดินเรือ
+    ผู้ร่วมก่อตั้งและผู้ประสานงานชุมชน NavaLab-TH อดีตนายประจำเรือและผู้เชี่ยวชาญด้านปฏิบัติการเดินเรือ
   en: >-
-    Co-Founder and Community Coordinator of NavaLab, with a background as a deck officer and
+    Co-Founder and Community Coordinator of NavaLab-TH, with a background as a deck officer and
     maritime operations specialist.
 bio:
   th: >-
@@ -20,13 +20,13 @@ bio:
     ผู้วางแผนด้านความปลอดภัยทางทะเลระดับภูมิภาค ปัจจุบันกำลังศึกษาต่อ
     ปริญญาโทด้านเทคโนโลยีทางทะเลและโลจิสติกส์ที่ Tokyo University of Marine Science and Technology
     โดยมีงานวิจัยที่สนใจคือการบริหารจัดการการจราจรทางน้ำและการเลือกเส้นทางเดินเรือในพื้นที่หนาแน่น
-    ในฐานะผู้ร่วมก่อตั้ง NavaLab อธิพัชร์ดูแลด้านการประสานงานชุมชนและเชื่อมโยงสมาชิกในกลุ่ม
+    ในฐานะผู้ร่วมก่อตั้ง NavaLab-TH อธิพัชร์ดูแลด้านการประสานงานชุมชนและเชื่อมโยงสมาชิกในกลุ่ม
   en: >-
     Born in Chon Buri, Thailand, Athiphach began his maritime career as a Third Officer
     before moving into port operations and agency work, and later regional marine safety
     planning. He is currently pursuing a Master's degree in Maritime Technology and Logistics
     at Tokyo University of Marine Science and Technology, with a research focus on optimizing
-    traffic management and route selection in congested sea areas. As Co-Founder of NavaLab,
+    traffic management and route selection in congested sea areas. As Co-Founder of NavaLab-TH,
     he leads community coordination and connects the group's members.
 expertise:
   th:
